@@ -16,11 +16,11 @@ import javafx.util.Duration;
 
 public class SplashScreen extends Application {
 
-    public Stage primaryStage;
-    private Scene SplashScreen;
+    public static Stage primaryStage;
+    private Scene splashScene;
     @Override
     public void start(Stage primaryStage) {
-        
+        SplashScreen.primaryStage = primaryStage;
 
         /*
          * =========================================
@@ -175,7 +175,7 @@ public class SplashScreen extends Application {
 
         PauseTransition delay = new PauseTransition(Duration.seconds(1));
         delay.setOnFinished(e -> {
-            LoginPage.primaryStage = primaryStage;
+            // LoginPage.primaryStage = primaryStage;
             LoginPage loginPage = new LoginPage();
             primaryStage.setScene(loginPage.getLoginScene(null));
         });

@@ -226,8 +226,8 @@ public class Sign_Up {
         root.getChildren().add(mainLayout);
 
         // --- Scene & Stage ---
-        signUpScene = new Scene(root,LoginPage.primaryStage.getWidth(),LoginPage.primaryStage.getHeight());
-        LoginPage.primaryStage.setMaximized(true);
+        signUpScene = new Scene(root,SplashScreen.primaryStage.getWidth(),SplashScreen.primaryStage.getHeight());
+        SplashScreen.primaryStage.setMaximized(true);
         
         // Suppress default focus highlight outline on fields
         signUpScene.getStylesheets().add("data:text/css," +

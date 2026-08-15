@@ -13,6 +13,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import com.visionx.view.SplashScreen;
 
 public class Dashboard  {
 
@@ -24,7 +25,7 @@ public class Dashboard  {
 
     private static Node dashboardCentre;
 
-    public static Stage primaryStage;
+//     public static Stage primaryStage;
 
     public Scene getSupplimentDashboardScene(Runnable callBackAction) {
 
@@ -82,11 +83,11 @@ public class Dashboard  {
         dashboardScene =
                 new Scene(
                         mainPane,
-                        1400,
-                        800
+                        SplashScreen.primaryStage.getWidth(),
+                        SplashScreen.primaryStage.getHeight()
                 );
 
-
+                SplashScreen.primaryStage.setMaximized(true);
         // dashboardStage.setScene(
         //         dashboardScene
         // );

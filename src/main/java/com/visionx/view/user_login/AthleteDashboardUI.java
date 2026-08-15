@@ -1,6 +1,8 @@
 
 package com.visionx.view.user_login;
 
+import com.visionx.view.SplashScreen;
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -34,8 +36,7 @@ import javafx.stage.Popup;
 
 public class AthleteDashboardUI {
 
-    public static Stage primaryStage;
-    // public static Stage primaryStage;
+    
     private Scene dashboardScene;
 
     // =========================================================
@@ -47,8 +48,7 @@ public class AthleteDashboardUI {
         BorderPane borderPane = new BorderPane();
 
         borderPane.setStyle(
-            "-fx-background-color: linear-gradient(to bottom right, #050912, #0a111d, #050912);"
-        );
+                "-fx-background-color: linear-gradient(to bottom right, #050912, #0a111d, #050912);");
 
         // =====================================================
         // SIDEBAR
@@ -57,11 +57,10 @@ public class AthleteDashboardUI {
         VBox sidebar = new VBox(15);
 
         sidebar.setStyle(
-            "-fx-background-color: linear-gradient(to bottom, #020914, #06111d);" +
-            "-fx-padding: 30px 20px 20px 20px;" +
-            "-fx-border-color: #182330;" +
-            "-fx-border-width: 0 1 0 0;"
-        );
+                "-fx-background-color: linear-gradient(to bottom, #020914, #06111d);" +
+                        "-fx-padding: 30px 20px 20px 20px;" +
+                        "-fx-border-color: #182330;" +
+                        "-fx-border-width: 0 1 0 0;");
 
         sidebar.setPrefWidth(260);
 
@@ -72,25 +71,22 @@ public class AthleteDashboardUI {
         Text logoTxt = new Text("FitVerse");
 
         logoTxt.setStyle(
-            "-fx-font-size: 30px;" +
-            "-fx-font-weight: bold;" +
-            "-fx-fill: #62ff96;"
-        );
+                "-fx-font-size: 30px;" +
+                        "-fx-font-weight: bold;" +
+                        "-fx-fill: #62ff96;");
 
         Text subLogoTxt = new Text("AI FITNESS PRO");
 
         subLogoTxt.setStyle(
-            "-fx-font-size: 9px;" +
-            "-fx-fill: #647180;" +
-            "-fx-font-weight: bold;" +
-            "-fx-letter-spacing: 3px;"
-        );
+                "-fx-font-size: 9px;" +
+                        "-fx-fill: #647180;" +
+                        "-fx-font-weight: bold;" +
+                        "-fx-letter-spacing: 3px;");
 
         VBox logoBox = new VBox(2, logoTxt, subLogoTxt);
 
         logoBox.setPadding(
-            new Insets(0, 0, 30, 10)
-        );
+                new Insets(0, 0, 30, 10));
 
         // =====================================================
         // NAVIGATION BUTTONS
@@ -98,45 +94,35 @@ public class AthleteDashboardUI {
 
         VBox navBox = new VBox(5);
 
-        Button btnDashboard =
-                createNavButton("Dashboard", true);
+        Button btnDashboard = createNavButton("Dashboard", true);
 
-        Button btnAnalytics =
-                createNavButton("Analytics", false);
+        Button btnAnalytics = createNavButton("Analytics", false);
 
         // Button btnAiMentor =
-        //         createNavButton("AI Mentor", false);
+        // createNavButton("AI Mentor", false);
 
-        Button btnPlanner =
-                createNavButton("Planner", false);
+        Button btnPlanner = createNavButton("Planner", false);
 
-        Button btnGymPlanner =
-                createNavButton("Gym Planner", false);
+        Button btnGymPlanner = createNavButton("Gym Planner", false);
 
-        Button btnTrainers =
-            createNavButton("Gym Trainers", false);
+        Button btnTrainers = createNavButton("Gym Trainers", false);
 
-        Button btnFindGym =
-                createNavButton("Find Gym", false);
+        Button btnFindGym = createNavButton("Find Gym", false);
 
-        Button btnMarketplace =
-                createNavButton("Marketplace", false);
+        Button btnMarketplace = createNavButton("Marketplace", false);
 
-        Button btnSettings =
-                createNavButton("Settings", false);
-
-        
+        Button btnSettings = createNavButton("Settings", false);
 
         Button[] allNavBtns = {
-            btnDashboard,
-            btnAnalytics,
-            // btnAiMentor,
-            btnPlanner,
-            btnGymPlanner,
-            btnFindGym,
-            btnTrainers,
-            btnMarketplace,
-            btnSettings
+                btnDashboard,
+                btnAnalytics,
+                // btnAiMentor,
+                btnPlanner,
+                btnGymPlanner,
+                btnFindGym,
+                btnTrainers,
+                btnMarketplace,
+                btnSettings
         };
 
         navBox.getChildren().addAll(allNavBtns);
@@ -148,9 +134,8 @@ public class AthleteDashboardUI {
         Region spacer = new Region();
 
         VBox.setVgrow(
-            spacer,
-            Priority.ALWAYS
-        );
+                spacer,
+                Priority.ALWAYS);
 
         // =====================================================
         // PREMIUM CARD
@@ -158,80 +143,67 @@ public class AthleteDashboardUI {
 
         VBox premiumCard = new VBox(8);
 
-        String premiumNormal =
-            "-fx-background-color: linear-gradient(to bottom right, #071c16, #07111d);" +
-            "-fx-background-radius: 16px;" +
-            "-fx-padding: 16px;" +
-            "-fx-border-color: rgba(98,255,150,0.25);" +
-            "-fx-border-radius: 16px;";
+        String premiumNormal = "-fx-background-color: linear-gradient(to bottom right, #071c16, #07111d);" +
+                "-fx-background-radius: 16px;" +
+                "-fx-padding: 16px;" +
+                "-fx-border-color: rgba(98,255,150,0.25);" +
+                "-fx-border-radius: 16px;";
 
-        String premiumHover =
-            "-fx-background-color: #0b1825;" +
-            "-fx-background-radius: 16px;" +
-            "-fx-padding: 16px;" +
-            "-fx-border-color: rgba(98,255,150,0.55);" +
-            "-fx-border-radius: 16px;" +
-            "-fx-effect: dropshadow(gaussian, rgba(98,255,150,0.25), 20, 0.2, 0, 4);";
+        String premiumHover = "-fx-background-color: #0b1825;" +
+                "-fx-background-radius: 16px;" +
+                "-fx-padding: 16px;" +
+                "-fx-border-color: rgba(98,255,150,0.55);" +
+                "-fx-border-radius: 16px;" +
+                "-fx-effect: dropshadow(gaussian, rgba(98,255,150,0.25), 20, 0.2, 0, 4);";
 
         addHoverEffect(
-            premiumCard,
-            premiumNormal,
-            premiumHover
-        );
+                premiumCard,
+                premiumNormal,
+                premiumHover);
 
-        Text premiumLabel =
-                new Text("PREMIUM STATUS");
+        Text premiumLabel = new Text("PREMIUM STATUS");
 
         premiumLabel.setStyle(
-            "-fx-font-size:9px;" +
-            "-fx-fill:#62ff96;" +
-            "-fx-font-weight:bold;"
-        );
+                "-fx-font-size:9px;" +
+                        "-fx-fill:#62ff96;" +
+                        "-fx-font-weight:bold;");
 
-        Text upgradeText =
-                new Text("Upgrade to Pro");
+        Text upgradeText = new Text("Upgrade to Pro");
 
         upgradeText.setStyle(
-            "-fx-font-size:14px;" +
-            "-fx-fill:#ffffff;" +
-            "-fx-font-weight:bold;"
-        );
+                "-fx-font-size:14px;" +
+                        "-fx-fill:#ffffff;" +
+                        "-fx-font-weight:bold;");
 
-        Button unlockBtn =
-                new Button("Unlock Features");
+        Button unlockBtn = new Button("Unlock Features");
 
-        String unlockNormal =
-            "-fx-background-color: #62ff96;" +
-            "-fx-text-fill: #06100a;" +
-            "-fx-font-weight: bold;" +
-            "-fx-background-radius: 20px;" +
-            "-fx-padding: 8px 12px;" +
-            "-fx-cursor: hand;";
+        String unlockNormal = "-fx-background-color: #62ff96;" +
+                "-fx-text-fill: #06100a;" +
+                "-fx-font-weight: bold;" +
+                "-fx-background-radius: 20px;" +
+                "-fx-padding: 8px 12px;" +
+                "-fx-cursor: hand;";
 
-        String unlockHover =
-            "-fx-background-color: #9cffbb;" +
-            "-fx-text-fill: #000000;" +
-            "-fx-font-weight: bold;" +
-            "-fx-background-radius: 20px;" +
-            "-fx-padding: 8px 12px;" +
-            "-fx-effect: dropshadow(gaussian, rgba(98,255,150,0.4), 18, 0.3, 0, 2);" +
-            "-fx-cursor: hand;";
+        String unlockHover = "-fx-background-color: #9cffbb;" +
+                "-fx-text-fill: #000000;" +
+                "-fx-font-weight: bold;" +
+                "-fx-background-radius: 20px;" +
+                "-fx-padding: 8px 12px;" +
+                "-fx-effect: dropshadow(gaussian, rgba(98,255,150,0.4), 18, 0.3, 0, 2);" +
+                "-fx-cursor: hand;";
 
         addHoverEffect(
-            unlockBtn,
-            unlockNormal,
-            unlockHover
-        );
+                unlockBtn,
+                unlockNormal,
+                unlockHover);
 
         unlockBtn.setMaxWidth(
-            Double.MAX_VALUE
-        );
+                Double.MAX_VALUE);
 
         premiumCard.getChildren().addAll(
-            premiumLabel,
-            upgradeText,
-            unlockBtn
-        );
+                premiumLabel,
+                upgradeText,
+                unlockBtn);
 
         // =====================================================
         // USER PROFILE
@@ -240,52 +212,42 @@ public class AthleteDashboardUI {
         HBox userProfile = new HBox(12);
 
         userProfile.setAlignment(
-            Pos.CENTER_LEFT
-        );
+                Pos.CENTER_LEFT);
 
         userProfile.setPadding(
-            new Insets(10, 0, 0, 0)
-        );
+                new Insets(10, 0, 0, 0));
 
-        Circle avatar =
-                new Circle(18, Color.web("#3a3d41"));
+        Circle avatar = new Circle(18, Color.web("#3a3d41"));
 
         VBox userInfo = new VBox(2);
 
-        Text userName =
-                new Text("FitVerse User");
+        Text userName = new Text("FitVerse User");
 
         userName.setStyle(
-            "-fx-font-size:13px;" +
-            "-fx-fill:#ffffff;" +
-            "-fx-font-weight:bold;"
-        );
+                "-fx-font-size:13px;" +
+                        "-fx-fill:#ffffff;" +
+                        "-fx-font-weight:bold;");
 
-        Text userRole =
-                new Text("Pro Athlete");
+        Text userRole = new Text("Pro Athlete");
 
         userRole.setStyle(
-            "-fx-font-size:11px;" +
-            "-fx-fill:#8a8d91;"
-        );
+                "-fx-font-size:11px;" +
+                        "-fx-fill:#8a8d91;");
 
         userInfo.getChildren().addAll(
-            userName,
-            userRole
-        );
+                userName,
+                userRole);
 
         userProfile.getChildren().addAll(
-            avatar,
-            userInfo
-        );
+                avatar,
+                userInfo);
 
         sidebar.getChildren().addAll(
-            logoBox,
-            navBox,
-            spacer,
-            premiumCard,
-            userProfile
-        );
+                logoBox,
+                navBox,
+                spacer,
+                premiumCard,
+                userProfile);
 
         borderPane.setLeft(sidebar);
 
@@ -296,9 +258,8 @@ public class AthleteDashboardUI {
         VBox mainContent = new VBox(30);
 
         mainContent.setStyle(
-            "-fx-background-color: #080C14;" +
-            "-fx-padding: 30px 40px 40px 40px;"
-        );
+                "-fx-background-color: #080C14;" +
+                        "-fx-padding: 30px 40px 40px 40px;");
 
         mainContent.setMaxWidth(1100);
 
@@ -309,89 +270,75 @@ public class AthleteDashboardUI {
         HBox topHeader = new HBox();
 
         topHeader.setAlignment(
-            Pos.CENTER_LEFT
-        );
+                Pos.CENTER_LEFT);
 
-        Text headerTitle1 =
-                new Text("Athlete ");
+        Text headerTitle1 = new Text("Athlete ");
 
         headerTitle1.setStyle(
-            "-fx-font-size:22px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-fill:#ffffff;"
-        );
+                "-fx-font-size:22px;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-fill:#ffffff;");
 
-        Text headerTitle2 =
-                new Text("Dashboard");
+        Text headerTitle2 = new Text("Dashboard");
 
         headerTitle2.setStyle(
-            "-fx-font-size:22px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-fill:#62ff96;"
-        );
+                "-fx-font-size:22px;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-fill:#62ff96;");
 
-        HBox titleBox =
-                new HBox(
-                    headerTitle1,
-                    headerTitle2
-                );
+        HBox titleBox = new HBox(
+                headerTitle1,
+                headerTitle2);
 
-        Region headerSpacer =
-                new Region();
+        Region headerSpacer = new Region();
 
         HBox.setHgrow(
-            headerSpacer,
-            Priority.ALWAYS
-        );
+                headerSpacer,
+                Priority.ALWAYS);
 
-        TextField searchField =
-                new TextField();
+        TextField searchField = new TextField();
 
         searchField.setPromptText(
-            "Search data..."
-        );
+                "Search data...");
 
         searchField.setStyle(
-            "-fx-background-color:#111a24;" +
-            "-fx-text-fill:#ffffff;" +
-            "-fx-prompt-text-fill:#596675;" +
-            "-fx-background-radius:22px;" +
-            "-fx-border-color:#1e2b38;" +
-            "-fx-border-radius:22px;" +
-            "-fx-padding:10px 16px;" +
-            "-fx-pref-width:250px;"
-        );
+                "-fx-background-color:#111a24;" +
+                        "-fx-text-fill:#ffffff;" +
+                        "-fx-prompt-text-fill:#596675;" +
+                        "-fx-background-radius:22px;" +
+                        "-fx-border-color:#1e2b38;" +
+                        "-fx-border-radius:22px;" +
+                        "-fx-padding:10px 16px;" +
+                        "-fx-pref-width:250px;");
 
-        Circle notifCircle =
-                new Circle(18, Color.web("#212428"));
-        
+        Circle notifCircle = new Circle(18, Color.web("#212428"));
+
         Text notifText = new Text("🔔");
         notifText.setStyle("-fx-fill: #8a8d91; -fx-font-size: 16px;");
-        
+
         StackPane notifIcon = new StackPane(notifCircle, notifText);
         notifIcon.setStyle("-fx-cursor: hand;");
 
         Popup notifPopup = new Popup();
         notifPopup.setAutoHide(true);
-        
+
         VBox notifBox = new VBox(10);
         notifBox.setStyle(
-            "-fx-background-color: #111a24;" +
-            "-fx-padding: 15px;" +
-            "-fx-background-radius: 10px;" +
-            "-fx-border-color: #1e2b38;" +
-            "-fx-border-radius: 10px;" +
-            "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 5);"
-        );
+                "-fx-background-color: #111a24;" +
+                        "-fx-padding: 15px;" +
+                        "-fx-background-radius: 10px;" +
+                        "-fx-border-color: #1e2b38;" +
+                        "-fx-border-radius: 10px;" +
+                        "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 5);");
         notifBox.setPrefWidth(250);
-        
+
         Text notifTitle = new Text("Notifications");
         notifTitle.setStyle("-fx-fill: #ffffff; -fx-font-weight: bold; -fx-font-size: 14px;");
-        
+
         VBox notif1 = createNotificationItem("System", "Your metabolic score is updated!");
         VBox notif2 = createNotificationItem("Reminder", "Time for your afternoon workout.");
         VBox notif3 = createNotificationItem("Achievement", "You reached your protein goal today!");
-        
+
         notifBox.getChildren().addAll(notifTitle, notif1, notif2, notif3);
         notifPopup.getContent().add(notifBox);
 
@@ -404,148 +351,123 @@ public class AthleteDashboardUI {
             }
         });
 
-        Circle settingsCircle =
-                new Circle(18, Color.web("#212428"));
-                
+        Circle settingsCircle = new Circle(18, Color.web("#212428"));
+
         Text settingsText = new Text("⚙");
         settingsText.setStyle("-fx-fill: #8a8d91; -fx-font-size: 18px;");
-        
+
         StackPane settingsIcon = new StackPane(settingsCircle, settingsText);
         settingsIcon.setStyle("-fx-cursor: hand;");
-        
+
         settingsIcon.setOnMouseClicked(e -> {
             btnSettings.fire();
         });
 
-        HBox iconsBox =
-                new HBox(
-                    10,
-                    searchField,
-                    notifIcon,
-                    settingsIcon
-                );
+        HBox iconsBox = new HBox(
+                10,
+                searchField,
+                notifIcon,
+                settingsIcon);
 
         iconsBox.setAlignment(
-            Pos.CENTER
-        );
+                Pos.CENTER);
 
         topHeader.getChildren().addAll(
-            titleBox,
-            headerSpacer,
-            iconsBox
-        );
+                titleBox,
+                headerSpacer,
+                iconsBox);
 
         // =====================================================
         // WELCOME SECTION
         // =====================================================
 
-        HBox welcomeSection =
-                new HBox();
+        HBox welcomeSection = new HBox();
 
         welcomeSection.setAlignment(
-            Pos.BOTTOM_LEFT
-        );
+                Pos.BOTTOM_LEFT);
 
-        VBox welcomeTexts =
-                new VBox(5);
+        VBox welcomeTexts = new VBox(5);
 
-        Text welcomeTxt =
-                new Text(
-                    "Welcome back, Darekar Kunal"
-                );
+        Text welcomeTxt = new Text(
+                "Welcome back, Darekar Kunal");
 
         welcomeTxt.setStyle(
-            "-fx-font-size:32px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-fill:#ffffff;"
-        );
+                "-fx-font-size:32px;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-fill:#ffffff;");
 
-        Text subWelcomeTxt =
-                new Text(
-                    "Your current metabolic score is 92. Ready for today's session?"
-                );
+        Text subWelcomeTxt = new Text(
+                "Your current metabolic score is 92. Ready for today's session?");
 
         subWelcomeTxt.setStyle(
-            "-fx-font-size:13px;" +
-            "-fx-fill:#8a8d91;"
-        );
+                "-fx-font-size:13px;" +
+                        "-fx-fill:#8a8d91;");
 
         welcomeTexts.getChildren().addAll(
-            welcomeTxt,
-            subWelcomeTxt
-        );
+                welcomeTxt,
+                subWelcomeTxt);
 
-        Region welcomeSpacer =
-                new Region();
+        Region welcomeSpacer = new Region();
 
         HBox.setHgrow(
-            welcomeSpacer,
-            Priority.ALWAYS
-        );
+                welcomeSpacer,
+                Priority.ALWAYS);
 
-        Button genWorkout =
-                new Button("⚡ Generate Workout");
+        Button genWorkout = new Button("⚡ Generate Workout");
 
-        String workoutNormal =
-            "-fx-background-color:#62ff96;" +
-            "-fx-text-fill:#06100a;" +
-            "-fx-font-weight:bold;" +
-            "-fx-font-size:13px;" +
-            "-fx-background-radius:24px;" +
-            "-fx-padding:11px 20px;" +
-            "-fx-cursor:hand;";
+        String workoutNormal = "-fx-background-color:#62ff96;" +
+                "-fx-text-fill:#06100a;" +
+                "-fx-font-weight:bold;" +
+                "-fx-font-size:13px;" +
+                "-fx-background-radius:24px;" +
+                "-fx-padding:11px 20px;" +
+                "-fx-cursor:hand;";
 
-        String workoutHover =
-            "-fx-background-color:#8affb0;" +
-            "-fx-text-fill:#000000;" +
-            "-fx-font-weight:bold;" +
-            "-fx-font-size:13px;" +
-            "-fx-background-radius:24px;" +
-            "-fx-padding:11px 20px;" +
-            "-fx-effect:dropshadow(gaussian, rgba(98,255,150,0.45), 18, 0.3, 0, 0);" +
-            "-fx-cursor:hand;";
+        String workoutHover = "-fx-background-color:#8affb0;" +
+                "-fx-text-fill:#000000;" +
+                "-fx-font-weight:bold;" +
+                "-fx-font-size:13px;" +
+                "-fx-background-radius:24px;" +
+                "-fx-padding:11px 20px;" +
+                "-fx-effect:dropshadow(gaussian, rgba(98,255,150,0.45), 18, 0.3, 0, 0);" +
+                "-fx-cursor:hand;";
 
         addHoverEffect(
-            genWorkout,
-            workoutNormal,
-            workoutHover
-        );
+                genWorkout,
+                workoutNormal,
+                workoutHover);
 
-        Button genDiet =
-                new Button("🍽 Generate Diet");
+        Button genDiet = new Button("🍽 Generate Diet");
 
         // Button askAi =
-        //         new Button("🧠 Ask AI");
+        // new Button("🧠 Ask AI");
 
-        String darkButtonNormal =
-            "-fx-background-color:#151b24;" +
-            "-fx-text-fill:#ffffff;" +
-            "-fx-background-radius:24px;" +
-            "-fx-padding:11px 20px;" +
-            "-fx-border-color:#27303a;" +
-            "-fx-border-radius:24px;" +
-            "-fx-cursor:hand;";
+        String darkButtonNormal = "-fx-background-color:#151b24;" +
+                "-fx-text-fill:#ffffff;" +
+                "-fx-background-radius:24px;" +
+                "-fx-padding:11px 20px;" +
+                "-fx-border-color:#27303a;" +
+                "-fx-border-radius:24px;" +
+                "-fx-cursor:hand;";
 
-        String darkButtonHover =
-            "-fx-background-color:#1e2833;" +
-            "-fx-text-fill:#62ff96;" +
-            "-fx-background-radius:24px;" +
-            "-fx-padding:11px 20px;" +
-            "-fx-border-color:#62ff96;" +
-            "-fx-border-radius:24px;" +
-            "-fx-effect:dropshadow(gaussian, rgba(98,255,150,0.20), 15, 0.2, 0, 0);" +
-            "-fx-cursor:hand;";
+        String darkButtonHover = "-fx-background-color:#1e2833;" +
+                "-fx-text-fill:#62ff96;" +
+                "-fx-background-radius:24px;" +
+                "-fx-padding:11px 20px;" +
+                "-fx-border-color:#62ff96;" +
+                "-fx-border-radius:24px;" +
+                "-fx-effect:dropshadow(gaussian, rgba(98,255,150,0.20), 15, 0.2, 0, 0);" +
+                "-fx-cursor:hand;";
 
         addHoverEffect(
-            genDiet,
-            darkButtonNormal,
-            darkButtonHover
-        );
+                genDiet,
+                darkButtonNormal,
+                darkButtonHover);
 
         // addHoverEffect(
-        //     askAi,
-        //     darkButtonNormal,
-        //     darkButtonHover
+        // askAi,
+        // darkButtonNormal,
+        // darkButtonHover
         // );
 
         // =====================================================
@@ -554,182 +476,149 @@ public class AthleteDashboardUI {
 
         // askAi.setOnAction(e -> {
 
-        //     AiMentorView aiMentorView =
-        //             new AiMentorView();
+        // AiMentorView aiMentorView =
+        // new AiMentorView();
 
-        //     Node aiMentorPage =
-        //             aiMentorView
-        //                 .getAiMentorScene(callBackAction)
-        //                 .getRoot();
+        // Node aiMentorPage =
+        // aiMentorView
+        // .getAiMentorScene(callBackAction)
+        // .getRoot();
 
-        //     switchPage(
-        //         borderPane,
-        //         aiMentorPage,
-        //         btnAiMentor,
-        //         allNavBtns
-        //     );
+        // switchPage(
+        // borderPane,
+        // aiMentorPage,
+        // btnAiMentor,
+        // allNavBtns
+        // );
         // });
 
-        HBox actionButtons =
-                new HBox(
-                    15,
-                    genWorkout,
-                    genDiet
-                    // askAi
-                );
+        HBox actionButtons = new HBox(
+                15,
+                genWorkout,
+                genDiet
+        // askAi
+        );
 
         welcomeSection.getChildren().addAll(
-            welcomeTexts,
-            welcomeSpacer,
-            actionButtons
-        );
+                welcomeTexts,
+                welcomeSpacer,
+                actionButtons);
 
         // =====================================================
         // STATS GRID
         // =====================================================
 
-        HBox statsGrid =
-                new HBox(20);
+        HBox statsGrid = new HBox(20);
 
         statsGrid.getChildren().addAll(
-            createBmiCard(),
-            createRingCard(
-                "Calories",
-                "1,840",
-                "Target: 2,400",
-                76
-            ),
-            createRingCard(
-                "Protein",
-                "112g",
-                "Target: 160g",
-                68
-            ),
-            createRingCard(
-                "Hydration",
-                "2.4L",
-                "Target: 3.5L",
-                62
-            )
-        );
+                createBmiCard(),
+                createRingCard(
+                        "Calories",
+                        "1,840",
+                        "Target: 2,400",
+                        76),
+                createRingCard(
+                        "Protein",
+                        "112g",
+                        "Target: 160g",
+                        68),
+                createRingCard(
+                        "Hydration",
+                        "2.4L",
+                        "Target: 3.5L",
+                        62));
 
         // =====================================================
         // MIDDLE SECTION
         // =====================================================
 
-        HBox middleSection =
-                new HBox(20);
+        HBox middleSection = new HBox(20);
 
-        VBox chartBox =
-                new VBox(10);
+        VBox chartBox = new VBox(10);
 
         chartBox.setStyle(
-            "-fx-background-color:linear-gradient(to bottom right, #07111d, #091522);" +
-            "-fx-background-radius:18px;" +
-            "-fx-padding:25px;" +
-            "-fx-border-color:#172431;" +
-            "-fx-border-radius:18px;"
-        );
+                "-fx-background-color:linear-gradient(to bottom right, #07111d, #091522);" +
+                        "-fx-background-radius:18px;" +
+                        "-fx-padding:25px;" +
+                        "-fx-border-color:#172431;" +
+                        "-fx-border-radius:18px;");
 
         HBox.setHgrow(
-            chartBox,
-            Priority.ALWAYS
-        );
+                chartBox,
+                Priority.ALWAYS);
 
         chartBox.setPrefHeight(300);
 
-        HBox chartTop =
-                new HBox();
+        HBox chartTop = new HBox();
 
-        VBox chartTexts =
-                new VBox(2);
+        VBox chartTexts = new VBox(2);
 
-        Text chartTitle =
-                new Text("Workout Progress");
+        Text chartTitle = new Text("Workout Progress");
 
         chartTitle.setStyle(
-            "-fx-font-size:18px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-fill:#ffffff;"
-        );
+                "-fx-font-size:18px;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-fill:#ffffff;");
 
-        Text chartSub =
-                new Text(
-                    "Heart rate & Intensity over the last 7 days"
-                );
+        Text chartSub = new Text(
+                "Heart rate & Intensity over the last 7 days");
 
         chartSub.setStyle(
-            "-fx-font-size:11px;" +
-            "-fx-fill:#8a8d91;"
-        );
+                "-fx-font-size:11px;" +
+                        "-fx-fill:#8a8d91;");
 
         chartTexts.getChildren().addAll(
-            chartTitle,
-            chartSub
-        );
+                chartTitle,
+                chartSub);
 
-        Region chartSpacer =
-                new Region();
+        Region chartSpacer = new Region();
 
         HBox.setHgrow(
-            chartSpacer,
-            Priority.ALWAYS
-        );
+                chartSpacer,
+                Priority.ALWAYS);
 
-        HBox toggleBox =
-                new HBox(10);
+        HBox toggleBox = new HBox(10);
 
-        Text weekTxt =
-                new Text("Week");
+        Text weekTxt = new Text("Week");
 
         weekTxt.setStyle(
-            "-fx-fill:#62ff96;" +
-            "-fx-font-weight:bold;" +
-            "-fx-background-color:rgba(98,255,150,0.1);" +
-            "-fx-padding:5px 10px;" +
-            "-fx-background-radius:10px;"
-        );
+                "-fx-fill:#62ff96;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-background-color:rgba(98,255,150,0.1);" +
+                        "-fx-padding:5px 10px;" +
+                        "-fx-background-radius:10px;");
 
-        Text monthTxt =
-                new Text("Month");
+        Text monthTxt = new Text("Month");
 
         monthTxt.setStyle(
-            "-fx-fill:#8a8d91;"
-        );
+                "-fx-fill:#8a8d91;");
 
         toggleBox.getChildren().addAll(
-            weekTxt,
-            monthTxt
-        );
+                weekTxt,
+                monthTxt);
 
         toggleBox.setAlignment(
-            Pos.CENTER
-        );
+                Pos.CENTER);
 
         chartTop.getChildren().addAll(
-            chartTexts,
-            chartSpacer,
-            toggleBox
-        );
+                chartTexts,
+                chartSpacer,
+                toggleBox);
 
         // =====================================================
         // WORKOUT GRAPH
         // =====================================================
 
-        CategoryAxis xAxis =
-                new CategoryAxis();
+        CategoryAxis xAxis = new CategoryAxis();
 
-        NumberAxis yAxis =
-                new NumberAxis();
+        NumberAxis yAxis = new NumberAxis();
 
         xAxis.setLabel("");
         yAxis.setLabel("");
 
-        LineChart<String, Number> workoutChart =
-                new LineChart<>(
-                    xAxis,
-                    yAxis
-                );
+        LineChart<String, Number> workoutChart = new LineChart<>(
+                xAxis,
+                yAxis);
 
         workoutChart.setTitle("");
 
@@ -738,394 +627,314 @@ public class AthleteDashboardUI {
         workoutChart.setCreateSymbols(true);
 
         workoutChart.setStyle(
-            "-fx-background-color:transparent;" +
-            "-fx-padding:10px;"
-        );
+                "-fx-background-color:transparent;" +
+                        "-fx-padding:10px;");
 
-        XYChart.Series<String, Number> series =
-                new XYChart.Series<>();
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
 
         series.getData().add(
-            new XYChart.Data<>("Mon", 65)
-        );
+                new XYChart.Data<>("Mon", 65));
 
         series.getData().add(
-            new XYChart.Data<>("Tue", 72)
-        );
+                new XYChart.Data<>("Tue", 72));
 
         series.getData().add(
-            new XYChart.Data<>("Wed", 58)
-        );
+                new XYChart.Data<>("Wed", 58));
 
         series.getData().add(
-            new XYChart.Data<>("Thu", 82)
-        );
+                new XYChart.Data<>("Thu", 82));
 
         series.getData().add(
-            new XYChart.Data<>("Fri", 75)
-        );
+                new XYChart.Data<>("Fri", 75));
 
         series.getData().add(
-            new XYChart.Data<>("Sat", 90)
-        );
+                new XYChart.Data<>("Sat", 90));
 
         series.getData().add(
-            new XYChart.Data<>("Sun", 85)
-        );
+                new XYChart.Data<>("Sun", 85));
 
         workoutChart.getData().add(series);
 
         workoutChart.applyCss();
         workoutChart.layout();
 
-        Node seriesLine =
-                workoutChart.lookup(
-                    ".series0.chart-series-line"
-                );
+        Node seriesLine = workoutChart.lookup(
+                ".series0.chart-series-line");
 
         if (seriesLine != null) {
 
             seriesLine.setStyle(
-                "-fx-stroke:#62ff96;" +
-                "-fx-stroke-width:3px;"
-            );
+                    "-fx-stroke:#62ff96;" +
+                            "-fx-stroke-width:3px;");
         }
 
-        Node chartSymbol =
-                workoutChart.lookup(
-                    ".series0.chart-line-symbol"
-                );
+        Node chartSymbol = workoutChart.lookup(
+                ".series0.chart-line-symbol");
 
         if (chartSymbol != null) {
 
             chartSymbol.setStyle(
-                "-fx-background-color:#62ff96, #07111d;" +
-                "-fx-background-insets:0, 2;"
-            );
+                    "-fx-background-color:#62ff96, #07111d;" +
+                            "-fx-background-insets:0, 2;");
         }
 
         xAxis.setTickLabelFill(
-            Color.web("#8a8d91")
-        );
+                Color.web("#8a8d91"));
 
         yAxis.setTickLabelFill(
-            Color.web("#8a8d91")
-        );
+                Color.web("#8a8d91"));
 
         xAxis.setTickLabelFont(
-            javafx.scene.text.Font.font(10)
-        );
+                javafx.scene.text.Font.font(10));
 
         yAxis.setTickLabelFont(
-            javafx.scene.text.Font.font(10)
-        );
+                javafx.scene.text.Font.font(10));
 
         yAxis.setAutoRanging(false);
         yAxis.setLowerBound(0);
         yAxis.setUpperBound(100);
         yAxis.setTickUnit(20);
 
-        Node plotBackground =
-                workoutChart.lookup(
-                    ".chart-plot-background"
-                );
+        Node plotBackground = workoutChart.lookup(
+                ".chart-plot-background");
 
         if (plotBackground != null) {
 
             plotBackground.setStyle(
-                "-fx-background-color:transparent;"
-            );
+                    "-fx-background-color:transparent;");
         }
 
-        Node verticalGrid =
-                workoutChart.lookup(
-                    ".chart-vertical-grid-lines"
-                );
+        Node verticalGrid = workoutChart.lookup(
+                ".chart-vertical-grid-lines");
 
         if (verticalGrid != null) {
 
             verticalGrid.setStyle(
-                "-fx-stroke:#212428;"
-            );
+                    "-fx-stroke:#212428;");
         }
 
-        Node horizontalGrid =
-                workoutChart.lookup(
-                    ".chart-horizontal-grid-lines"
-                );
+        Node horizontalGrid = workoutChart.lookup(
+                ".chart-horizontal-grid-lines");
 
         if (horizontalGrid != null) {
 
             horizontalGrid.setStyle(
-                "-fx-stroke:#212428;"
-            );
+                    "-fx-stroke:#212428;");
         }
 
-        VBox chartArea =
-                new VBox(workoutChart);
+        VBox chartArea = new VBox(workoutChart);
 
         chartArea.setAlignment(
-            Pos.CENTER
-        );
+                Pos.CENTER);
 
         chartArea.setPadding(
-            new Insets(20, 0, 0, 0)
-        );
+                new Insets(20, 0, 0, 0));
 
         VBox.setVgrow(
-            chartArea,
-            Priority.ALWAYS
-        );
+                chartArea,
+                Priority.ALWAYS);
 
         chartBox.getChildren().addAll(
-            chartTop,
-            chartArea
-        );
+                chartTop,
+                chartArea);
 
         // =====================================================
         // GOALS
         // =====================================================
 
-        VBox goalsBox =
-                new VBox(20);
+        VBox goalsBox = new VBox(20);
 
         goalsBox.setStyle(
-            "-fx-background-color:linear-gradient(to bottom, #07111d, #091522);" +
-            "-fx-background-radius:18px;" +
-            "-fx-padding:25px;" +
-            "-fx-border-color:#172431;" +
-            "-fx-border-radius:18px;"
-        );
+                "-fx-background-color:linear-gradient(to bottom, #07111d, #091522);" +
+                        "-fx-background-radius:18px;" +
+                        "-fx-padding:25px;" +
+                        "-fx-border-color:#172431;" +
+                        "-fx-border-radius:18px;");
 
         goalsBox.setPrefWidth(320);
 
-        Text goalsTitle =
-                new Text("Today's Goal");
+        Text goalsTitle = new Text("Today's Goal");
 
         goalsTitle.setStyle(
-            "-fx-font-size:18px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-fill:#ffffff;"
-        );
+                "-fx-font-size:18px;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-fill:#ffffff;");
 
-        Button addGoalBtn =
-                new Button("+ Add New Goal");
+        Button addGoalBtn = new Button("+ Add New Goal");
 
-        String goalButtonNormal =
-            "-fx-background-color:transparent;" +
-            "-fx-text-fill:#ffffff;" +
-            "-fx-border-color:#293642;" +
-            "-fx-border-radius:10px;" +
-            "-fx-padding:10px;" +
-            "-fx-cursor:hand;";
+        String goalButtonNormal = "-fx-background-color:transparent;" +
+                "-fx-text-fill:#ffffff;" +
+                "-fx-border-color:#293642;" +
+                "-fx-border-radius:10px;" +
+                "-fx-padding:10px;" +
+                "-fx-cursor:hand;";
 
-        String goalButtonHover =
-            "-fx-background-color:rgba(98,255,150,0.08);" +
-            "-fx-text-fill:#62ff96;" +
-            "-fx-border-color:#62ff96;" +
-            "-fx-border-radius:10px;" +
-            "-fx-padding:10px;" +
-            "-fx-cursor:hand;";
+        String goalButtonHover = "-fx-background-color:rgba(98,255,150,0.08);" +
+                "-fx-text-fill:#62ff96;" +
+                "-fx-border-color:#62ff96;" +
+                "-fx-border-radius:10px;" +
+                "-fx-padding:10px;" +
+                "-fx-cursor:hand;";
 
         addHoverEffect(
-            addGoalBtn,
-            goalButtonNormal,
-            goalButtonHover
-        );
+                addGoalBtn,
+                goalButtonNormal,
+                goalButtonHover);
 
         addGoalBtn.setMaxWidth(
-            Double.MAX_VALUE
-        );
+                Double.MAX_VALUE);
 
-        VBox goalsContainer =
-                new VBox(15);
+        VBox goalsContainer = new VBox(15);
 
         goalsContainer.getChildren().addAll(
-            createGoalItem(
-                "5km Morning Run",
-                "Completed at 06:45 AM",
-                true
-            ),
-            createGoalItem(
-                "Push Day Session",
-                "Scheduled for 05:30 PM",
-                false
-            ),
-            createGoalItem(
-                "Drink 3L Water",
-                "2.4L / 3.0L Tracked",
-                false
-            )
-        );
+                createGoalItem(
+                        "5km Morning Run",
+                        "Completed at 06:45 AM",
+                        true),
+                createGoalItem(
+                        "Push Day Session",
+                        "Scheduled for 05:30 PM",
+                        false),
+                createGoalItem(
+                        "Drink 3L Water",
+                        "2.4L / 3.0L Tracked",
+                        false));
 
         addGoalBtn.setOnAction(e -> {
 
-            TextInputDialog dialog =
-                    new TextInputDialog();
+            TextInputDialog dialog = new TextInputDialog();
 
             dialog.setTitle(
-                "Add New Goal"
-            );
+                    "Add New Goal");
 
             dialog.setHeaderText(
-                "Create Today's Goal"
-            );
+                    "Create Today's Goal");
 
             dialog.setContentText(
-                "Enter your goal:"
-            );
+                    "Enter your goal:");
 
             dialog.showAndWait()
-                .ifPresent(goalName -> {
+                    .ifPresent(goalName -> {
 
-                    if (!goalName.trim().isEmpty()) {
+                        if (!goalName.trim().isEmpty()) {
 
-                        HBox newGoal =
-                                createGoalItem(
+                            HBox newGoal = createGoalItem(
                                     goalName.trim(),
                                     "Just now",
-                                    false
-                                );
+                                    false);
 
-                        goalsContainer
-                            .getChildren()
-                            .add(newGoal);
-                    }
-                });
+                            goalsContainer
+                                    .getChildren()
+                                    .add(newGoal);
+                        }
+                    });
         });
 
         goalsBox.getChildren().addAll(
-            goalsTitle,
-            goalsContainer,
-            addGoalBtn
-        );
+                goalsTitle,
+                goalsContainer,
+                addGoalBtn);
 
         middleSection.getChildren().addAll(
-            chartBox,
-            goalsBox
-        );
+                chartBox,
+                goalsBox);
 
         // =====================================================
         // BOTTOM SECTION
         // =====================================================
 
-        HBox bottomSection =
-                new HBox(20);
+        HBox bottomSection = new HBox(20);
 
-        VBox aiBox =
-                new VBox(15);
+        VBox aiBox = new VBox(15);
 
         aiBox.setStyle(
-            "-fx-background-color:linear-gradient(to bottom right, #07111d, #091a17);" +
-            "-fx-background-radius:18px;" +
-            "-fx-padding:25px;" +
-            "-fx-border-color:rgba(98,255,150,0.20);" +
-            "-fx-border-radius:18px;" +
-            "-fx-effect:dropshadow(gaussian, rgba(98,255,150,0.06), 25, 0.2, 0, 5);"
-        );
+                "-fx-background-color:linear-gradient(to bottom right, #07111d, #091a17);" +
+                        "-fx-background-radius:18px;" +
+                        "-fx-padding:25px;" +
+                        "-fx-border-color:rgba(98,255,150,0.20);" +
+                        "-fx-border-radius:18px;" +
+                        "-fx-effect:dropshadow(gaussian, rgba(98,255,150,0.06), 25, 0.2, 0, 5);");
 
         aiBox.setPrefWidth(300);
 
-        HBox aiTop =
-                new HBox(10);
+        HBox aiTop = new HBox(10);
 
-        Circle aiIcon =
-                new Circle(
-                    12,
-                    Color.web("rgba(98,255,150,0.2)")
-                );
+        Circle aiIcon = new Circle(
+                12,
+                Color.web("rgba(98,255,150,0.2)"));
 
-        Text aiTitle =
-                new Text("AI INSIGHT");
+        Text aiTitle = new Text("AI INSIGHT");
 
         aiTitle.setStyle(
-            "-fx-font-size:12px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-fill:#62ff96;" +
-            "-fx-letter-spacing:1px;"
-        );
+                "-fx-font-size:12px;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-fill:#62ff96;" +
+                        "-fx-letter-spacing:1px;");
 
         aiTop.getChildren().addAll(
-            aiIcon,
-            aiTitle
-        );
+                aiIcon,
+                aiTitle);
 
         aiTop.setAlignment(
-            Pos.CENTER_LEFT
-        );
+                Pos.CENTER_LEFT);
 
-        Label aiText =
-                new Label(
-                    "\"Your recovery rate is 15% higher than average today. I suggest pushing your bench press volume by 2.5kg. Your sleep data indicates perfect REM cycles for high-intensity power.\""
-                );
+        Label aiText = new Label(
+                "\"Your recovery rate is 15% higher than average today. I suggest pushing your bench press volume by 2.5kg. Your sleep data indicates perfect REM cycles for high-intensity power.\"");
 
         aiText.setWrapText(true);
 
         aiText.setStyle(
-            "-fx-font-size:13px;" +
-            "-fx-text-fill:#ffffff;" +
-            "-fx-line-spacing:4px;"
-        );
+                "-fx-font-size:13px;" +
+                        "-fx-text-fill:#ffffff;" +
+                        "-fx-line-spacing:4px;");
 
-        Text viewReport =
-                new Text(
-                    "View detailed report →"
-                );
+        Text viewReport = new Text(
+                "View detailed report →");
 
         viewReport.setStyle(
-            "-fx-font-size:12px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-fill:#62ff96;"
-        );
+                "-fx-font-size:12px;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-fill:#62ff96;");
 
         aiBox.getChildren().addAll(
-            aiTop,
-            aiText,
-            viewReport
-        );
+                aiTop,
+                aiText,
+                viewReport);
 
         // =====================================================
         // ROUTINE
         // =====================================================
 
-        HBox routineBox =
-                new HBox(20);
+        HBox routineBox = new HBox(20);
 
         routineBox.setStyle(
-            "-fx-background-color:linear-gradient(to right, #07111d, #091522);" +
-            "-fx-background-radius:18px;" +
-            "-fx-padding:20px;" +
-            "-fx-border-color:#172431;" +
-            "-fx-border-radius:18px;"
-        );
+                "-fx-background-color:linear-gradient(to right, #07111d, #091522);" +
+                        "-fx-background-radius:18px;" +
+                        "-fx-padding:20px;" +
+                        "-fx-border-color:#172431;" +
+                        "-fx-border-radius:18px;");
 
         HBox.setHgrow(
-            routineBox,
-            Priority.ALWAYS
-        );
+                routineBox,
+                Priority.ALWAYS);
 
-        StackPane routineImage =
-                new StackPane();
+        StackPane routineImage = new StackPane();
 
-        Image workoutImage =
-                new Image(
-                    "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?" +
-                    "auto=format&fit=crop&w=600&q=80",
-                    200,
-                    140,
-                    false,
-                    true
-                );
+        Image workoutImage = new Image(
+                "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?" +
+                        "auto=format&fit=crop&w=600&q=80",
+                200,
+                140,
+                false,
+                true);
 
-        ImageView workoutImageView =
-                new ImageView(workoutImage);
+        ImageView workoutImageView = new ImageView(workoutImage);
 
         workoutImageView.setFitWidth(200);
         workoutImageView.setFitHeight(140);
         workoutImageView.setPreserveRatio(false);
 
-        Rectangle clip =
-                new Rectangle(200, 140);
+        Rectangle clip = new Rectangle(200, 140);
 
         clip.setArcWidth(15);
         clip.setArcHeight(15);
@@ -1133,194 +942,157 @@ public class AthleteDashboardUI {
         workoutImageView.setClip(clip);
 
         routineImage.getChildren().add(
-            workoutImageView
-        );
+                workoutImageView);
 
-        VBox imgTagBox =
-                new VBox(5);
+        VBox imgTagBox = new VBox(5);
 
         imgTagBox.setAlignment(
-            Pos.BOTTOM_LEFT
-        );
+                Pos.BOTTOM_LEFT);
 
         imgTagBox.setPadding(
-            new Insets(10)
-        );
+                new Insets(10));
 
-        Text tag1 =
-                new Text("TODAY'S FOCUS");
+        Text tag1 = new Text("TODAY'S FOCUS");
 
         tag1.setStyle(
-            "-fx-background-color:#62ff96;" +
-            "-fx-fill:#000000;" +
-            "-fx-font-size:8px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-padding:2px 6px;"
-        );
+                "-fx-background-color:#62ff96;" +
+                        "-fx-fill:#000000;" +
+                        "-fx-font-size:8px;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-padding:2px 6px;");
 
-        Text tag2 =
-                new Text("Upper Body Power");
+        Text tag2 = new Text("Upper Body Power");
 
         tag2.setStyle(
-            "-fx-fill:#ffffff;" +
-            "-fx-font-size:14px;" +
-            "-fx-font-weight:bold;"
-        );
+                "-fx-fill:#ffffff;" +
+                        "-fx-font-size:14px;" +
+                        "-fx-font-weight:bold;");
 
         imgTagBox.getChildren().addAll(
-            tag1,
-            tag2
-        );
+                tag1,
+                tag2);
 
         routineImage.getChildren().add(
-            imgTagBox
-        );
+                imgTagBox);
 
-        VBox routineDetails =
-                new VBox(10);
+        VBox routineDetails = new VBox(10);
 
         HBox.setHgrow(
-            routineDetails,
-            Priority.ALWAYS
-        );
+                routineDetails,
+                Priority.ALWAYS);
 
-        HBox blockTop =
-                new HBox();
+        HBox blockTop = new HBox();
 
-        Text blockTitle =
-                new Text("Hypertrophy Block A");
+        Text blockTitle = new Text("Hypertrophy Block A");
 
         blockTitle.setStyle(
-            "-fx-font-size:16px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-fill:#ffffff;"
-        );
+                "-fx-font-size:16px;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-fill:#ffffff;");
 
-        Region bSpacer =
-                new Region();
+        Region bSpacer = new Region();
 
         HBox.setHgrow(
-            bSpacer,
-            Priority.ALWAYS
-        );
+                bSpacer,
+                Priority.ALWAYS);
 
-        Text timeTxt =
-                new Text("60 min");
+        Text timeTxt = new Text("60 min");
 
         timeTxt.setStyle(
-            "-fx-font-size:11px;" +
-            "-fx-fill:#62ff96;"
-        );
+                "-fx-font-size:11px;" +
+                        "-fx-fill:#62ff96;");
 
         blockTop.getChildren().addAll(
-            blockTitle,
-            bSpacer,
-            timeTxt
-        );
+                blockTitle,
+                bSpacer,
+                timeTxt);
 
-        Button startWorkout =
-                new Button("Start Workout");
+        Button startWorkout = new Button("Start Workout");
 
-        String startNormal =
-            "-fx-background-color:#151b24;" +
-            "-fx-text-fill:#ffffff;" +
-            "-fx-background-radius:10px;" +
-            "-fx-padding:10px;" +
-            "-fx-border-color:#293642;" +
-            "-fx-border-radius:10px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-cursor:hand;";
+        String startNormal = "-fx-background-color:#151b24;" +
+                "-fx-text-fill:#ffffff;" +
+                "-fx-background-radius:10px;" +
+                "-fx-padding:10px;" +
+                "-fx-border-color:#293642;" +
+                "-fx-border-radius:10px;" +
+                "-fx-font-weight:bold;" +
+                "-fx-cursor:hand;";
 
-        String startHover =
-            "-fx-background-color:#62ff96;" +
-            "-fx-text-fill:#06100a;" +
-            "-fx-background-radius:10px;" +
-            "-fx-padding:10px;" +
-            "-fx-border-color:#62ff96;" +
-            "-fx-border-radius:10px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-effect:dropshadow(gaussian, rgba(98,255,150,0.35), 18, 0.3, 0, 2);" +
-            "-fx-cursor:hand;";
+        String startHover = "-fx-background-color:#62ff96;" +
+                "-fx-text-fill:#06100a;" +
+                "-fx-background-radius:10px;" +
+                "-fx-padding:10px;" +
+                "-fx-border-color:#62ff96;" +
+                "-fx-border-radius:10px;" +
+                "-fx-font-weight:bold;" +
+                "-fx-effect:dropshadow(gaussian, rgba(98,255,150,0.35), 18, 0.3, 0, 2);" +
+                "-fx-cursor:hand;";
 
         addHoverEffect(
-            startWorkout,
-            startNormal,
-            startHover
-        );
+                startWorkout,
+                startNormal,
+                startHover);
 
         startWorkout.setMaxWidth(
-            Double.MAX_VALUE
-        );
+                Double.MAX_VALUE);
 
         startWorkout.setOnAction(e -> {
 
-            WorkoutExecutionView workoutView =
-                    new WorkoutExecutionView();
+            WorkoutExecutionView workoutView = new WorkoutExecutionView();
 
-            Node workoutPage =
-                    workoutView
-                        .getWorkoutExecutionScene(
+            Node workoutPage = workoutView
+                    .getWorkoutExecutionScene(
                             () -> {
                                 System.out.println(
-                                    "Workout finished"
-                                );
-                            }
-                        )
-                        .getRoot();
+                                        "Workout finished");
+                            })
+                    .getRoot();
 
             switchPage(
-                borderPane,
-                workoutPage,
-                btnDashboard,
-                allNavBtns
-            );
+                    borderPane,
+                    workoutPage,
+                    btnDashboard,
+                    allNavBtns);
         });
 
         routineDetails.getChildren().addAll(
-            blockTop,
-            createExerciseRow(
-                "Bench Press",
-                "4 Sets x 8 Reps"
-            ),
-            createExerciseRow(
-                "Weighted Pullups",
-                "3 Sets x 12 Reps"
-            ),
-            createExerciseRow(
-                "Overhead Press",
-                "3 Sets x 10 Reps"
-            ),
-            startWorkout
-        );
+                blockTop,
+                createExerciseRow(
+                        "Bench Press",
+                        "4 Sets x 8 Reps"),
+                createExerciseRow(
+                        "Weighted Pullups",
+                        "3 Sets x 12 Reps"),
+                createExerciseRow(
+                        "Overhead Press",
+                        "3 Sets x 10 Reps"),
+                startWorkout);
 
         routineBox.getChildren().addAll(
-            routineImage,
-            routineDetails
-        );
+                routineImage,
+                routineDetails);
 
         bottomSection.getChildren().addAll(
-            aiBox,
-            routineBox
-        );
+                aiBox,
+                routineBox);
 
         // =====================================================
         // TOP PERFORMER SECTION
         // =====================================================
-        
+
         VBox topPerformerBox = new VBox(15);
         topPerformerBox.setStyle(
-            "-fx-background-color:linear-gradient(to bottom right, #1a1505, #110e03);" +
-            "-fx-background-radius:18px;" +
-            "-fx-padding:20px;" +
-            "-fx-border-color:#33290b;" +
-            "-fx-border-radius:18px;" +
-            "-fx-effect:dropshadow(gaussian, rgba(255,215,0,0.1), 20, 0.2, 0, 0);"
-        );
+                "-fx-background-color:linear-gradient(to bottom right, #1a1505, #110e03);" +
+                        "-fx-background-radius:18px;" +
+                        "-fx-padding:20px;" +
+                        "-fx-border-color:#33290b;" +
+                        "-fx-border-radius:18px;" +
+                        "-fx-effect:dropshadow(gaussian, rgba(255,215,0,0.1), 20, 0.2, 0, 0);");
         topPerformerBox.setMaxWidth(Double.MAX_VALUE);
 
         HBox performerHeader = new HBox();
         performerHeader.setAlignment(Pos.CENTER_LEFT);
-        
+
         Text performerTitle = new Text("\uD83C\uDFC6 GYM LEADERBOARD #1");
         performerTitle.setStyle("-fx-font-size:12px; -fx-font-weight:bold; -fx-fill:#ffd700; -fx-letter-spacing:1px;");
         performerHeader.getChildren().add(performerTitle);
@@ -1331,14 +1103,14 @@ public class AthleteDashboardUI {
         Circle performerAvatar = new Circle(25, Color.web("#2a2307"));
         performerAvatar.setStroke(Color.web("#ffd700"));
         performerAvatar.setStrokeWidth(2);
-        
+
         VBox performerDetails = new VBox(2);
         Text performerName = new Text("Alex Mercer");
         performerName.setStyle("-fx-font-size:16px; -fx-font-weight:bold; -fx-fill:#ffffff;");
-        
+
         Text performerStats = new Text("Streak: 45 Days  \u2022  Total Volume: 12,400 kg  \u2022  Level 42");
         performerStats.setStyle("-fx-font-size:12px; -fx-fill:#8a8d91;");
-        
+
         performerDetails.getChildren().addAll(performerName, performerStats);
 
         Region pSpacer = new Region();
@@ -1350,221 +1122,196 @@ public class AthleteDashboardUI {
         addHoverEffect(viewProfileBtn, pBtnNormal, pBtnHover);
 
         performerContent.getChildren().addAll(performerAvatar, performerDetails, pSpacer, viewProfileBtn);
-        
+
         topPerformerBox.getChildren().addAll(performerHeader, performerContent);
 
         // =====================================================
         // FOOTER
         // =========================================================
 
-        HBox footer =
-                new HBox();
+        HBox footer = new HBox();
 
         footer.setStyle(
-            "-fx-padding:18px 40px;" +
-            "-fx-background-color:#050a11;" +
-            "-fx-border-color:#17212c transparent transparent transparent;" +
-            "-fx-border-width:1px 0 0 0;"
-        );
+                "-fx-padding:18px 40px;" +
+                        "-fx-background-color:#050a11;" +
+                        "-fx-border-color:#17212c transparent transparent transparent;" +
+                        "-fx-border-width:1px 0 0 0;");
 
-        VBox fLogoBox =
-                new VBox(2);
+        VBox fLogoBox = new VBox(2);
 
-        Text fLogo =
-                new Text("FitVerse");
+        Text fLogo = new Text("FitVerse");
 
         fLogo.setStyle(
-            "-fx-fill:#62ff96;" +
-            "-fx-font-size:18px;" +
-            "-fx-font-weight:bold;"
-        );
+                "-fx-fill:#62ff96;" +
+                        "-fx-font-size:18px;" +
+                        "-fx-font-weight:bold;");
 
-        Text fCopy =
-                new Text(
-                    "© 2024 FitVerse AI. All rights reserved."
-                );
+        Text fCopy = new Text(
+                "© 2024 FitVerse AI. All rights reserved.");
 
         fCopy.setStyle(
-            "-fx-fill:#8a8d91;" +
-            "-fx-font-size:10px;"
-        );
+                "-fx-fill:#8a8d91;" +
+                        "-fx-font-size:10px;");
 
         fLogoBox.getChildren().addAll(
-            fLogo,
-            fCopy
-        );
+                fLogo,
+                fCopy);
 
-        Region fSpacer =
-                new Region();
+        Region fSpacer = new Region();
 
         HBox.setHgrow(
-            fSpacer,
-            Priority.ALWAYS
-        );
+                fSpacer,
+                Priority.ALWAYS);
 
-        HBox fLinks =
-                new HBox(20);
+        HBox fLinks = new HBox(20);
 
         fLinks.setAlignment(
-            Pos.CENTER
-        );
+                Pos.CENTER);
 
         String[] links = {
-            "Privacy Policy",
-            "Terms of Service",
-            "Contact",
-            "About"
+                "Privacy Policy",
+                "Terms of Service",
+                "Contact",
+                "About"
         };
 
         for (String l : links) {
 
-            Text t =
-                    new Text(l);
+            Text t = new Text(l);
 
             t.setStyle(
-                "-fx-fill:#8a8d91;" +
-                "-fx-font-size:11px;" +
-                "-fx-font-weight:bold;"
-            );
+                    "-fx-fill:#8a8d91;" +
+                            "-fx-font-size:11px;" +
+                            "-fx-font-weight:bold;");
 
             fLinks.getChildren().add(t);
         }
 
         footer.getChildren().addAll(
-            fLogoBox,
-            fSpacer,
-            fLinks
-        );
+                fLogoBox,
+                fSpacer,
+                fLinks);
 
         // =====================================================
         // ADD MAIN CONTENT
         // =====================================================
 
         mainContent.getChildren().addAll(
-            topHeader,
-            welcomeSection,
-            statsGrid,
-            middleSection,
-            bottomSection,
-            topPerformerBox,
-            footer
-        );
+                topHeader,
+                welcomeSection,
+                statsGrid,
+                middleSection,
+                bottomSection,
+                topPerformerBox,
+                footer);
 
         // =====================================================
         // FOOTER
         // =====================================================
 
         // HBox footer =
-        //         new HBox();
+        // new HBox();
 
         // footer.setStyle(
-        //     "-fx-padding:18px 40px;" +
-        //     "-fx-background-color:#050a11;" +
-        //     "-fx-border-color:#17212c transparent transparent transparent;" +
-        //     "-fx-border-width:1px 0 0 0;"
+        // "-fx-padding:18px 40px;" +
+        // "-fx-background-color:#050a11;" +
+        // "-fx-border-color:#17212c transparent transparent transparent;" +
+        // "-fx-border-width:1px 0 0 0;"
         // );
 
         // VBox fLogoBox =
-        //         new VBox(2);
+        // new VBox(2);
 
         // Text fLogo =
-        //         new Text("FitVerse");
+        // new Text("FitVerse");
 
         // fLogo.setStyle(
-        //     "-fx-fill:#62ff96;" +
-        //     "-fx-font-size:18px;" +
-        //     "-fx-font-weight:bold;"
+        // "-fx-fill:#62ff96;" +
+        // "-fx-font-size:18px;" +
+        // "-fx-font-weight:bold;"
         // );
 
         // Text fCopy =
-        //         new Text(
-        //             "© 2024 FitVerse AI. All rights reserved."
-        //         );
+        // new Text(
+        // "© 2024 FitVerse AI. All rights reserved."
+        // );
 
         // fCopy.setStyle(
-        //     "-fx-fill:#8a8d91;" +
-        //     "-fx-font-size:10px;"
+        // "-fx-fill:#8a8d91;" +
+        // "-fx-font-size:10px;"
         // );
 
         // fLogoBox.getChildren().addAll(
-        //     fLogo,
-        //     fCopy
+        // fLogo,
+        // fCopy
         // );
 
         // Region fSpacer =
-        //         new Region();
+        // new Region();
 
         // HBox.setHgrow(
-        //     fSpacer,
-        //     Priority.ALWAYS
+        // fSpacer,
+        // Priority.ALWAYS
         // );
 
         // HBox fLinks =
-        //         new HBox(20);
+        // new HBox(20);
 
         // fLinks.setAlignment(
-        //     Pos.CENTER
+        // Pos.CENTER
         // );
 
         // String[] links = {
-        //     "Privacy Policy",
-        //     "Terms of Service",
-        //     "Contact",
-        //     "About"
+        // "Privacy Policy",
+        // "Terms of Service",
+        // "Contact",
+        // "About"
         // };
 
         // for (String l : links) {
 
-        //     Text t =
-        //             new Text(l);
+        // Text t =
+        // new Text(l);
 
-        //     t.setStyle(
-        //         "-fx-fill:#8a8d91;" +
-        //         "-fx-font-size:11px;" +
-        //         "-fx-font-weight:bold;"
-        //     );
+        // t.setStyle(
+        // "-fx-fill:#8a8d91;" +
+        // "-fx-font-size:11px;" +
+        // "-fx-font-weight:bold;"
+        // );
 
-        //     fLinks.getChildren().add(t);
+        // fLinks.getChildren().add(t);
         // }
 
         // footer.getChildren().addAll(
-        //     fLogoBox,
-        //     fSpacer,
-        //     fLinks
+        // fLogoBox,
+        // fSpacer,
+        // fLinks
         // );
 
         // =====================================================
         // DASHBOARD ROOT
         // =====================================================
 
-        BorderPane dashboardRoot =
-                new BorderPane();
+        BorderPane dashboardRoot = new BorderPane();
 
-        ScrollPane scrollPane =
-                new ScrollPane(mainContent);
+        ScrollPane scrollPane = new ScrollPane(mainContent);
 
         scrollPane.setStyle(
-            "-fx-background:#080C14;" +
-            "-fx-background-color:#080C14;" +
-            "-fx-border-color:transparent;"
-        );
+                "-fx-background:#080C14;" +
+                        "-fx-background-color:#080C14;" +
+                        "-fx-border-color:transparent;");
 
         scrollPane.setFitToWidth(true);
 
         dashboardRoot.setCenter(
-            scrollPane
-        );
+                scrollPane);
 
         // dashboardRoot.setBottom(
-        //     footer
+        // footer
         // );
 
-
-
-
         borderPane.setCenter(
-            dashboardRoot
-        );
+                dashboardRoot);
 
         // StackPane pageRoot = new StackPane();
 
@@ -1579,11 +1326,10 @@ public class AthleteDashboardUI {
         btnDashboard.setOnAction(e -> {
 
             switchPage(
-                borderPane,
-                dashboardRoot,
-                btnDashboard,
-                allNavBtns
-            );
+                    borderPane,
+                    dashboardRoot,
+                    btnDashboard,
+                    allNavBtns);
         });
 
         // =====================================================
@@ -1592,20 +1338,17 @@ public class AthleteDashboardUI {
 
         btnAnalytics.setOnAction(e -> {
 
-            ProgressAnalyticsView progressAnalyticsView =
-                    new ProgressAnalyticsView();
+            ProgressAnalyticsView progressAnalyticsView = new ProgressAnalyticsView();
 
-            Node analyticsPage =
-                    progressAnalyticsView
-                        .getAnalyticsScene(callBackAction)
-                        .getRoot();
+            Node analyticsPage = progressAnalyticsView
+                    .getAnalyticsScene(callBackAction)
+                    .getRoot();
 
             switchPage(
-                borderPane,
-                analyticsPage,
-                btnAnalytics,
-                allNavBtns
-            );
+                    borderPane,
+                    analyticsPage,
+                    btnAnalytics,
+                    allNavBtns);
         });
 
         // =====================================================
@@ -1614,20 +1357,20 @@ public class AthleteDashboardUI {
 
         // btnAiMentor.setOnAction(e -> {
 
-        //     AiMentorView aiMentorView =
-        //             new AiMentorView();
+        // AiMentorView aiMentorView =
+        // new AiMentorView();
 
-        //     Node aiMentorPage =
-        //             aiMentorView
-        //                 .getAiMentorScene(callBackAction)
-        //                 .getRoot();
+        // Node aiMentorPage =
+        // aiMentorView
+        // .getAiMentorScene(callBackAction)
+        // .getRoot();
 
-        //     switchPage(
-        //         borderPane,
-        //         aiMentorPage,
-        //         btnAiMentor,
-        //         allNavBtns
-        //     );
+        // switchPage(
+        // borderPane,
+        // aiMentorPage,
+        // btnAiMentor,
+        // allNavBtns
+        // );
         // });
 
         // =====================================================
@@ -1636,20 +1379,17 @@ public class AthleteDashboardUI {
 
         btnPlanner.setOnAction(e -> {
 
-            DietPlannerView dietPlannerView =
-                    new DietPlannerView();
+            DietPlannerView dietPlannerView = new DietPlannerView();
 
-            Node plannerPage =
-                    dietPlannerView
-                        .getDietPlannerScene(callBackAction)
-                        .getRoot();
+            Node plannerPage = dietPlannerView
+                    .getDietPlannerScene(callBackAction)
+                    .getRoot();
 
             switchPage(
-                borderPane,
-                plannerPage,
-                btnPlanner,
-                allNavBtns
-            );
+                    borderPane,
+                    plannerPage,
+                    btnPlanner,
+                    allNavBtns);
         });
 
         // =====================================================
@@ -1658,20 +1398,17 @@ public class AthleteDashboardUI {
 
         btnGymPlanner.setOnAction(e -> {
 
-            GymPlannerView gymPlannerView =
-                    new GymPlannerView();
+            GymPlannerView gymPlannerView = new GymPlannerView();
 
-            Node gymPlannerPage =
-                    gymPlannerView
-                        .getGymPlannerScene(callBackAction)
-                        .getRoot();
+            Node gymPlannerPage = gymPlannerView
+                    .getGymPlannerScene(callBackAction)
+                    .getRoot();
 
             switchPage(
-                borderPane,
-                gymPlannerPage,
-                btnGymPlanner,
-                allNavBtns
-            );
+                    borderPane,
+                    gymPlannerPage,
+                    btnGymPlanner,
+                    allNavBtns);
         });
 
         // =====================================================
@@ -1680,22 +1417,18 @@ public class AthleteDashboardUI {
 
         btnFindGym.setOnAction(e -> {
 
-            GymFinderView gymFinderView =
-                    new GymFinderView();
+            GymFinderView gymFinderView = new GymFinderView();
 
-            Node gymPage =
-                    gymFinderView
-                        .getGymFinderScene(callBackAction)
-                        .getRoot();
+            Node gymPage = gymFinderView
+                    .getGymFinderScene(callBackAction)
+                    .getRoot();
 
             switchPage(
-                borderPane,
-                gymPage,
-                btnFindGym,
-                allNavBtns
-            );
+                    borderPane,
+                    gymPage,
+                    btnFindGym,
+                    allNavBtns);
         });
-
 
         // =====================================================
         // GYM TRAINERS
@@ -1703,20 +1436,17 @@ public class AthleteDashboardUI {
 
         btnTrainers.setOnAction(e -> {
 
-            GymTrainerView gymTrainerView =
-                    new GymTrainerView();
+            GymTrainerView gymTrainerView = new GymTrainerView();
 
-            Node trainerPage =
-                    gymTrainerView
-                        .getTrainerScene(callBackAction)
-                        .getRoot();
+            Node trainerPage = gymTrainerView
+                    .getTrainerScene(callBackAction)
+                    .getRoot();
 
             switchPage(
-                borderPane,
-                trainerPage,
-                btnTrainers,
-                allNavBtns
-            );
+                    borderPane,
+                    trainerPage,
+                    btnTrainers,
+                    allNavBtns);
         });
         // =====================================================
         // SETTINGS
@@ -1724,20 +1454,17 @@ public class AthleteDashboardUI {
 
         btnSettings.setOnAction(e -> {
 
-            AccountSettingsView accountSettingsView =
-                    new AccountSettingsView();
+            AccountSettingsView accountSettingsView = new AccountSettingsView();
 
-            Node settingsPage =
-                    accountSettingsView
-                        .getAccountSettingsScene(callBackAction)
-                        .getRoot();
+            Node settingsPage = accountSettingsView
+                    .getAccountSettingsScene(callBackAction)
+                    .getRoot();
 
             switchPage(
-                borderPane,
-                settingsPage,
-                btnSettings,
-                allNavBtns
-            );
+                    borderPane,
+                    settingsPage,
+                    btnSettings,
+                    allNavBtns);
         });
 
         // =====================================================
@@ -1746,22 +1473,19 @@ public class AthleteDashboardUI {
 
         btnMarketplace.setOnAction(e -> {
 
-            SupplementMarketplaceView marketplaceView =
-                    new SupplementMarketplaceView();
+            SupplementMarketplaceView marketplaceView = new SupplementMarketplaceView();
 
-            Node marketplacePage =
-                    marketplaceView
-                        .getMarketplaceScene(callBackAction)
-                        .getRoot();
+            Node marketplacePage = marketplaceView
+                    .getMarketplaceScene(callBackAction)
+                    .getRoot();
 
             switchPage(
-                borderPane,
-                marketplacePage,
-                btnMarketplace,
-                allNavBtns
-            );
+                    borderPane,
+                    marketplacePage,
+                    btnMarketplace,
+                    allNavBtns);
         });
-        
+
         StackPane pageRoot = new StackPane();
 
         pageRoot.getChildren().add(borderPane);
@@ -1772,14 +1496,12 @@ public class AthleteDashboardUI {
         // SCENE
         // =====================================================
 
-        dashboardScene =
-                new Scene(
-                    pageRoot,
-                    primaryStage.getWidth(),
-                    primaryStage.getHeight()
-                );
+        dashboardScene = new Scene(
+                pageRoot,
+                SplashScreen.primaryStage.getWidth(),
+                SplashScreen.primaryStage.getHeight());
 
-        primaryStage.setMaximized(true);
+        SplashScreen.primaryStage.setMaximized(true);
 
         return dashboardScene;
     }
@@ -1792,13 +1514,11 @@ public class AthleteDashboardUI {
             BorderPane mainPane,
             Node newContent,
             Button activeBtn,
-            Button[] allBtns
-    ) {
+            Button[] allBtns) {
 
         // Change page
         mainPane.setCenter(
-            newContent
-        );
+                newContent);
 
         // =====================================================
         // IMPORTANT:
@@ -1829,17 +1549,16 @@ public class AthleteDashboardUI {
     private void setActiveButtonStyle(Button btn) {
 
         btn.setStyle(
-            "-fx-background-color:rgba(98,255,150,0.10);" +
-            "-fx-text-fill:#62ff96;" +
-            "-fx-font-size:13px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-padding:12px 15px;" +
-            "-fx-background-radius:12px;" +
-            "-fx-border-color:#62ff96;" +
-            "-fx-border-width:0 0 0 3px;" +
-            "-fx-cursor:hand;" +
-            "-fx-effect:dropshadow(gaussian, rgba(98,255,150,0.12), 12, 0.2, 0, 0);"
-        );
+                "-fx-background-color:rgba(98,255,150,0.10);" +
+                        "-fx-text-fill:#62ff96;" +
+                        "-fx-font-size:13px;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-padding:12px 15px;" +
+                        "-fx-background-radius:12px;" +
+                        "-fx-border-color:#62ff96;" +
+                        "-fx-border-width:0 0 0 3px;" +
+                        "-fx-cursor:hand;" +
+                        "-fx-effect:dropshadow(gaussian, rgba(98,255,150,0.12), 12, 0.2, 0, 0);");
     }
 
     // =========================================================
@@ -1849,13 +1568,12 @@ public class AthleteDashboardUI {
     private void setNormalButtonStyle(Button btn) {
 
         btn.setStyle(
-            "-fx-background-color:transparent;" +
-            "-fx-text-fill:#8a8d91;" +
-            "-fx-font-size:13px;" +
-            "-fx-padding:12px 15px;" +
-            "-fx-background-radius:12px;" +
-            "-fx-cursor:hand;"
-        );
+                "-fx-background-color:transparent;" +
+                        "-fx-text-fill:#8a8d91;" +
+                        "-fx-font-size:13px;" +
+                        "-fx-padding:12px 15px;" +
+                        "-fx-background-radius:12px;" +
+                        "-fx-cursor:hand;");
     }
 
     // =========================================================
@@ -1864,18 +1582,15 @@ public class AthleteDashboardUI {
 
     private Button createNavButton(
             String text,
-            boolean isActive
-    ) {
+            boolean isActive) {
 
-        Button btn =
-                new Button("   " + text);
+        Button btn = new Button("   " + text);
 
         btn.setPrefWidth(220);
         btn.setPrefHeight(46);
 
         btn.setAlignment(
-            Pos.CENTER_LEFT
-        );
+                Pos.CENTER_LEFT);
 
         // true = active
         btn.setUserData(isActive);
@@ -1895,39 +1610,35 @@ public class AthleteDashboardUI {
 
         btn.setOnMouseEntered(e -> {
 
-            boolean active =
-                    Boolean.TRUE.equals(
-                        btn.getUserData()
-                    );
+            boolean active = Boolean.TRUE.equals(
+                    btn.getUserData());
 
             if (active) {
 
                 btn.setStyle(
-                    "-fx-background-color:rgba(98,255,150,0.18);" +
-                    "-fx-text-fill:#ffffff;" +
-                    "-fx-font-size:13px;" +
-                    "-fx-font-weight:bold;" +
-                    "-fx-padding:12px 15px;" +
-                    "-fx-background-radius:12px;" +
-                    "-fx-border-color:#62ff96;" +
-                    "-fx-border-width:0 0 0 4px;" +
-                    "-fx-effect:dropshadow(gaussian, rgba(98,255,150,0.28), 18, 0.25, 0, 0);" +
-                    "-fx-cursor:hand;"
-                );
+                        "-fx-background-color:rgba(98,255,150,0.18);" +
+                                "-fx-text-fill:#ffffff;" +
+                                "-fx-font-size:13px;" +
+                                "-fx-font-weight:bold;" +
+                                "-fx-padding:12px 15px;" +
+                                "-fx-background-radius:12px;" +
+                                "-fx-border-color:#62ff96;" +
+                                "-fx-border-width:0 0 0 4px;" +
+                                "-fx-effect:dropshadow(gaussian, rgba(98,255,150,0.28), 18, 0.25, 0, 0);" +
+                                "-fx-cursor:hand;");
 
             } else {
 
                 btn.setStyle(
-                    "-fx-background-color:rgba(98,255,150,0.07);" +
-                    "-fx-text-fill:#62ff96;" +
-                    "-fx-font-size:13px;" +
-                    "-fx-padding:12px 15px;" +
-                    "-fx-background-radius:12px;" +
-                    "-fx-border-color:rgba(98,255,150,0.15);" +
-                    "-fx-border-radius:12px;" +
-                    "-fx-effect:dropshadow(gaussian, rgba(98,255,150,0.08), 10, 0.2, 0, 0);" +
-                    "-fx-cursor:hand;"
-                );
+                        "-fx-background-color:rgba(98,255,150,0.07);" +
+                                "-fx-text-fill:#62ff96;" +
+                                "-fx-font-size:13px;" +
+                                "-fx-padding:12px 15px;" +
+                                "-fx-background-radius:12px;" +
+                                "-fx-border-color:rgba(98,255,150,0.15);" +
+                                "-fx-border-radius:12px;" +
+                                "-fx-effect:dropshadow(gaussian, rgba(98,255,150,0.08), 10, 0.2, 0, 0);" +
+                                "-fx-cursor:hand;");
             }
         });
 
@@ -1937,10 +1648,8 @@ public class AthleteDashboardUI {
 
         btn.setOnMouseExited(e -> {
 
-            boolean active =
-                    Boolean.TRUE.equals(
-                        btn.getUserData()
-                    );
+            boolean active = Boolean.TRUE.equals(
+                    btn.getUserData());
 
             if (active) {
 
@@ -1961,54 +1670,41 @@ public class AthleteDashboardUI {
 
     private BorderPane createPlaceholder(
             String pageTitle,
-            HBox footer
-    ) {
+            HBox footer) {
 
-        BorderPane pane =
-                new BorderPane();
+        BorderPane pane = new BorderPane();
 
         pane.setStyle(
-            "-fx-background-color:#020c19;"
-        );
+                "-fx-background-color:#020c19;");
 
-        VBox centerBox =
-                new VBox(15);
+        VBox centerBox = new VBox(15);
 
         centerBox.setAlignment(
-            Pos.CENTER
-        );
+                Pos.CENTER);
 
-        Text title =
-                new Text(pageTitle);
+        Text title = new Text(pageTitle);
 
         title.setStyle(
-            "-fx-font-size:32px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-fill:#ffffff;"
-        );
+                "-fx-font-size:32px;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-fill:#ffffff;");
 
-        Text subtitle =
-                new Text(
-                    "Page content will be rendered here soon."
-                );
+        Text subtitle = new Text(
+                "Page content will be rendered here soon.");
 
         subtitle.setStyle(
-            "-fx-font-size:16px;" +
-            "-fx-fill:#8a8d91;"
-        );
+                "-fx-font-size:16px;" +
+                        "-fx-fill:#8a8d91;");
 
         centerBox.getChildren().addAll(
-            title,
-            subtitle
-        );
+                title,
+                subtitle);
 
         pane.setCenter(
-            centerBox
-        );
+                centerBox);
 
         pane.setBottom(
-            footer
-        );
+                footer);
 
         return pane;
     }
@@ -2019,113 +1715,87 @@ public class AthleteDashboardUI {
 
     private VBox createBmiCard() {
 
-        VBox card =
-                new VBox(12);
+        VBox card = new VBox(12);
 
         card.setStyle(
-            "-fx-background-color:#020c19;" +
-            "-fx-background-radius:16px;" +
-            "-fx-padding:20px;"
-        );
+                "-fx-background-color:#020c19;" +
+                        "-fx-background-radius:16px;" +
+                        "-fx-padding:20px;");
 
         HBox.setHgrow(
-            card,
-            Priority.ALWAYS
-        );
+                card,
+                Priority.ALWAYS);
 
-        HBox top =
-                new HBox();
+        HBox top = new HBox();
 
-        VBox texts =
-                new VBox(5);
+        VBox texts = new VBox(5);
 
-        Text titleTxt =
-                new Text("Current BMI");
+        Text titleTxt = new Text("Current BMI");
 
         titleTxt.setStyle(
-            "-fx-font-size:12px;" +
-            "-fx-fill:#8a8d91;"
-        );
+                "-fx-font-size:12px;" +
+                        "-fx-fill:#8a8d91;");
 
-        Text valTxt =
-                new Text("22.4");
+        Text valTxt = new Text("22.4");
 
         valTxt.setStyle(
-            "-fx-font-size:28px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-fill:#ffffff;"
-        );
+                "-fx-font-size:28px;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-fill:#ffffff;");
 
         texts.getChildren().addAll(
-            titleTxt,
-            valTxt
-        );
+                titleTxt,
+                valTxt);
 
-        Region spacer =
-                new Region();
+        Region spacer = new Region();
 
         HBox.setHgrow(
-            spacer,
-            Priority.ALWAYS
-        );
+                spacer,
+                Priority.ALWAYS);
 
-        Circle icon =
-                new Circle(
-                    15,
-                    Color.web("rgba(98,255,150,0.1)")
-                );
+        Circle icon = new Circle(
+                15,
+                Color.web("rgba(98,255,150,0.1)"));
 
         top.getChildren().addAll(
-            texts,
-            spacer,
-            icon
-        );
+                texts,
+                spacer,
+                icon);
 
-        Rectangle bgLine =
-                new Rectangle(
-                    180,
-                    4,
-                    Color.web("#2a2d31")
-                );
+        Rectangle bgLine = new Rectangle(
+                180,
+                4,
+                Color.web("#2a2d31"));
 
         bgLine.setArcWidth(4);
         bgLine.setArcHeight(4);
 
-        Rectangle fgLine =
-                new Rectangle(
-                    120,
-                    4,
-                    Color.web("#62ff96")
-                );
+        Rectangle fgLine = new Rectangle(
+                120,
+                4,
+                Color.web("#62ff96"));
 
         fgLine.setArcWidth(4);
         fgLine.setArcHeight(4);
 
-        StackPane bar =
-                new StackPane(
-                    bgLine,
-                    fgLine
-                );
+        StackPane bar = new StackPane(
+                bgLine,
+                fgLine);
 
         bar.setAlignment(
-            Pos.CENTER_LEFT
-        );
+                Pos.CENTER_LEFT);
 
-        Text subTxt =
-                new Text(
-                    "Ideal range: 18.5 - 24.9"
-                );
+        Text subTxt = new Text(
+                "Ideal range: 18.5 - 24.9");
 
         subTxt.setStyle(
-            "-fx-font-size:10px;" +
-            "-fx-fill:#8a8d91;"
-        );
+                "-fx-font-size:10px;" +
+                        "-fx-fill:#8a8d91;");
 
         card.getChildren().addAll(
-            top,
-            bar,
-            subTxt
-        );
+                top,
+                bar,
+                subTxt);
 
         return card;
     }
@@ -2138,130 +1808,101 @@ public class AthleteDashboardUI {
             String title,
             String value,
             String subText,
-            int percentage
-    ) {
+            int percentage) {
 
-        HBox card =
-                new HBox(15);
+        HBox card = new HBox(15);
 
         card.setStyle(
-            "-fx-background-color:#020c19;" +
-            "-fx-background-radius:16px;" +
-            "-fx-padding:20px;"
-        );
+                "-fx-background-color:#020c19;" +
+                        "-fx-background-radius:16px;" +
+                        "-fx-padding:20px;");
 
         HBox.setHgrow(
-            card,
-            Priority.ALWAYS
-        );
+                card,
+                Priority.ALWAYS);
 
         card.setAlignment(
-            Pos.CENTER_LEFT
-        );
+                Pos.CENTER_LEFT);
 
-        VBox texts =
-                new VBox(5);
+        VBox texts = new VBox(5);
 
-        Text titleTxt =
-                new Text(title);
+        Text titleTxt = new Text(title);
 
         titleTxt.setStyle(
-            "-fx-font-size:12px;" +
-            "-fx-fill:#8a8d91;"
-        );
+                "-fx-font-size:12px;" +
+                        "-fx-fill:#8a8d91;");
 
-        Text valTxt =
-                new Text(value);
+        Text valTxt = new Text(value);
 
         valTxt.setStyle(
-            "-fx-font-size:24px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-fill:#ffffff;"
-        );
+                "-fx-font-size:24px;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-fill:#ffffff;");
 
-        Text subTxt =
-                new Text(subText);
+        Text subTxt = new Text(subText);
 
         subTxt.setStyle(
-            "-fx-font-size:10px;" +
-            "-fx-fill:#62ff96;"
-        );
+                "-fx-font-size:10px;" +
+                        "-fx-fill:#62ff96;");
 
         texts.getChildren().addAll(
-            titleTxt,
-            valTxt,
-            subTxt
-        );
+                titleTxt,
+                valTxt,
+                subTxt);
 
-        Region spacer =
-                new Region();
+        Region spacer = new Region();
 
         HBox.setHgrow(
-            spacer,
-            Priority.ALWAYS
-        );
+                spacer,
+                Priority.ALWAYS);
 
-        StackPane ringPane =
-                new StackPane();
+        StackPane ringPane = new StackPane();
 
-        Circle bgCircle =
-                new Circle(
-                    25,
-                    Color.TRANSPARENT
-                );
+        Circle bgCircle = new Circle(
+                25,
+                Color.TRANSPARENT);
 
         bgCircle.setStroke(
-            Color.web("#2a2d31")
-        );
+                Color.web("#2a2d31"));
 
         bgCircle.setStrokeWidth(5);
 
-        Arc fgArc =
-                new Arc(
-                    0,
-                    0,
-                    25,
-                    25,
-                    90,
-                    -360 * (percentage / 100.0)
-                );
+        Arc fgArc = new Arc(
+                0,
+                0,
+                25,
+                25,
+                90,
+                -360 * (percentage / 100.0));
 
         fgArc.setType(
-            ArcType.OPEN
-        );
+                ArcType.OPEN);
 
         fgArc.setFill(
-            Color.TRANSPARENT
-        );
+                Color.TRANSPARENT);
 
         fgArc.setStroke(
-            Color.web("#62ff96")
-        );
+                Color.web("#62ff96"));
 
         fgArc.setStrokeWidth(5);
 
-        Text percentTxt =
-                new Text(
-                    percentage + "%"
-                );
+        Text percentTxt = new Text(
+                percentage + "%");
 
         percentTxt.setStyle(
-            "-fx-font-size:11px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-fill:#ffffff;"
-        );
+                "-fx-font-size:11px;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-fill:#ffffff;");
 
         ringPane.getChildren().addAll(
-            bgCircle,
-            fgArc,
-            percentTxt
-        );
+                bgCircle,
+                fgArc,
+                percentTxt);
 
         card.getChildren().addAll(
-            texts,
-            spacer,
-            ringPane
-        );
+                texts,
+                spacer,
+                ringPane);
 
         return card;
     }
@@ -2273,59 +1914,46 @@ public class AthleteDashboardUI {
     private HBox createGoalItem(
             String title,
             String subText,
-            boolean completed
-    ) {
+            boolean completed) {
 
-        HBox box =
-                new HBox(15);
+        HBox box = new HBox(15);
 
         box.setAlignment(
-            Pos.CENTER_LEFT
-        );
+                Pos.CENTER_LEFT);
 
         box.setStyle(
-            "-fx-border-color:#2a2d31;" +
-            "-fx-border-width:0 0 1 0;" +
-            "-fx-padding:0 0 15px 0;"
-        );
+                "-fx-border-color:#2a2d31;" +
+                        "-fx-border-width:0 0 1 0;" +
+                        "-fx-padding:0 0 15px 0;");
 
-        Button checkButton =
-                new Button();
+        Button checkButton = new Button();
 
         checkButton.setMinSize(
-            36,
-            36
-        );
+                36,
+                36);
 
         checkButton.setMaxSize(
-            36,
-            36
-        );
+                36,
+                36);
 
-        VBox texts =
-                new VBox(3);
+        VBox texts = new VBox(3);
 
-        Text t1 =
-                new Text(title);
+        Text t1 = new Text(title);
 
-        Text t2 =
-                new Text(subText);
+        Text t2 = new Text(subText);
 
         texts.getChildren().addAll(
-            t1,
-            t2
-        );
+                t1,
+                t2);
 
-        Region spacer =
-                new Region();
+        Region spacer = new Region();
 
         HBox.setHgrow(
-            spacer,
-            Priority.ALWAYS
-        );
+                spacer,
+                Priority.ALWAYS);
 
         final boolean[] isCompleted = {
-            completed
+                completed
         };
 
         Runnable updateGoalStyle = () -> {
@@ -2335,52 +1963,45 @@ public class AthleteDashboardUI {
                 checkButton.setText("✓");
 
                 checkButton.setStyle(
-                    "-fx-background-color:#62ff96;" +
-                    "-fx-text-fill:#000000;" +
-                    "-fx-font-size:16px;" +
-                    "-fx-font-weight:bold;" +
-                    "-fx-background-radius:50%;" +
-                    "-fx-border-radius:50%;"
-                );
+                        "-fx-background-color:#62ff96;" +
+                                "-fx-text-fill:#000000;" +
+                                "-fx-font-size:16px;" +
+                                "-fx-font-weight:bold;" +
+                                "-fx-background-radius:50%;" +
+                                "-fx-border-radius:50%;");
 
                 t1.setStyle(
-                    "-fx-font-size:13px;" +
-                    "-fx-fill:#62ff96;" +
-                    "-fx-strikethrough:true;"
-                );
+                        "-fx-font-size:13px;" +
+                                "-fx-fill:#62ff96;" +
+                                "-fx-strikethrough:true;");
 
                 t2.setText(
-                    "Completed ✓"
-                );
+                        "Completed ✓");
 
                 t2.setStyle(
-                    "-fx-font-size:11px;" +
-                    "-fx-fill:#62ff96;"
-                );
+                        "-fx-font-size:11px;" +
+                                "-fx-fill:#62ff96;");
 
             } else {
 
                 checkButton.setText("○");
 
                 checkButton.setStyle(
-                    "-fx-background-color:transparent;" +
-                    "-fx-text-fill:#8a8d91;" +
-                    "-fx-font-size:20px;" +
-                    "-fx-font-weight:bold;" +
-                    "-fx-border-color:#8a8d91;" +
-                    "-fx-border-radius:50%;"
-                );
+                        "-fx-background-color:transparent;" +
+                                "-fx-text-fill:#8a8d91;" +
+                                "-fx-font-size:20px;" +
+                                "-fx-font-weight:bold;" +
+                                "-fx-border-color:#8a8d91;" +
+                                "-fx-border-radius:50%;");
 
                 t1.setStyle(
-                    "-fx-font-size:13px;" +
-                    "-fx-fill:#ffffff;" +
-                    "-fx-strikethrough:false;"
-                );
+                        "-fx-font-size:13px;" +
+                                "-fx-fill:#ffffff;" +
+                                "-fx-strikethrough:false;");
 
                 t2.setStyle(
-                    "-fx-font-size:11px;" +
-                    "-fx-fill:#8a8d91;"
-                );
+                        "-fx-font-size:11px;" +
+                                "-fx-fill:#8a8d91;");
             }
         };
 
@@ -2388,36 +2009,31 @@ public class AthleteDashboardUI {
 
         checkButton.setOnAction(e -> {
 
-            isCompleted[0] =
-                    !isCompleted[0];
+            isCompleted[0] = !isCompleted[0];
 
             updateGoalStyle.run();
         });
 
-        String goalNormal =
-            "-fx-background-color:transparent;" +
-            "-fx-border-color:#1d2935;" +
-            "-fx-border-width:0 0 1 0;" +
-            "-fx-padding:0 0 15px 0;";
+        String goalNormal = "-fx-background-color:transparent;" +
+                "-fx-border-color:#1d2935;" +
+                "-fx-border-width:0 0 1 0;" +
+                "-fx-padding:0 0 15px 0;";
 
-        String goalHover =
-            "-fx-background-color:rgba(98,255,150,0.035);" +
-            "-fx-border-color:rgba(98,255,150,0.20);" +
-            "-fx-border-width:0 0 1 0;" +
-            "-fx-padding:0 0 15px 0;" +
-            "-fx-background-radius:8px;";
+        String goalHover = "-fx-background-color:rgba(98,255,150,0.035);" +
+                "-fx-border-color:rgba(98,255,150,0.20);" +
+                "-fx-border-width:0 0 1 0;" +
+                "-fx-padding:0 0 15px 0;" +
+                "-fx-background-radius:8px;";
 
         addHoverEffect(
-            box,
-            goalNormal,
-            goalHover
-        );
+                box,
+                goalNormal,
+                goalHover);
 
         box.getChildren().addAll(
-            checkButton,
-            texts,
-            spacer
-        );
+                checkButton,
+                texts,
+                spacer);
 
         return box;
     }
@@ -2428,68 +2044,55 @@ public class AthleteDashboardUI {
 
     private HBox createExerciseRow(
             String name,
-            String reps
-    ) {
+            String reps) {
 
-        HBox row =
-                new HBox();
+        HBox row = new HBox();
 
         row.setAlignment(
-            Pos.CENTER_LEFT
-        );
+                Pos.CENTER_LEFT);
 
-        String normal =
-            "-fx-background-color:#111a24;" +
-            "-fx-background-radius:8px;" +
-            "-fx-padding:11px 15px;" +
-            "-fx-border-color:transparent;" +
-            "-fx-border-radius:8px;" +
-            "-fx-cursor:hand;";
+        String normal = "-fx-background-color:#111a24;" +
+                "-fx-background-radius:8px;" +
+                "-fx-padding:11px 15px;" +
+                "-fx-border-color:transparent;" +
+                "-fx-border-radius:8px;" +
+                "-fx-cursor:hand;";
 
-        String hover =
-            "-fx-background-color:rgba(98,255,150,0.08);" +
-            "-fx-background-radius:8px;" +
-            "-fx-padding:11px 15px;" +
-            "-fx-border-color:rgba(98,255,150,0.25);" +
-            "-fx-border-radius:8px;" +
-            "-fx-cursor:hand;";
+        String hover = "-fx-background-color:rgba(98,255,150,0.08);" +
+                "-fx-background-radius:8px;" +
+                "-fx-padding:11px 15px;" +
+                "-fx-border-color:rgba(98,255,150,0.25);" +
+                "-fx-border-radius:8px;" +
+                "-fx-cursor:hand;";
 
         addHoverEffect(
-            row,
-            normal,
-            hover
-        );
+                row,
+                normal,
+                hover);
 
-        Text tName =
-                new Text(name);
+        Text tName = new Text(name);
 
         tName.setStyle(
-            "-fx-font-size:12px;" +
-            "-fx-fill:#b8c1ca;"
-        );
+                "-fx-font-size:12px;" +
+                        "-fx-fill:#b8c1ca;");
 
-        Region space =
-                new Region();
+        Region space = new Region();
 
         HBox.setHgrow(
-            space,
-            Priority.ALWAYS
-        );
+                space,
+                Priority.ALWAYS);
 
-        Text tReps =
-                new Text(reps);
+        Text tReps = new Text(reps);
 
         tReps.setStyle(
-            "-fx-font-size:12px;" +
-            "-fx-font-weight:bold;" +
-            "-fx-fill:#62ff96;"
-        );
+                "-fx-font-size:12px;" +
+                        "-fx-font-weight:bold;" +
+                        "-fx-fill:#62ff96;");
 
         row.getChildren().addAll(
-            tName,
-            space,
-            tReps
-        );
+                tName,
+                space,
+                tReps);
 
         return row;
     }
@@ -2501,41 +2104,33 @@ public class AthleteDashboardUI {
     private void addHoverEffect(
             Node node,
             String normalStyle,
-            String hoverStyle
-    ) {
+            String hoverStyle) {
 
         node.setStyle(
-            normalStyle
-        );
+                normalStyle);
 
         node.setOnMouseEntered(e -> {
 
             node.setStyle(
-                hoverStyle
-            );
+                    hoverStyle);
 
             node.setScaleX(
-                1.02
-            );
+                    1.02);
 
             node.setScaleY(
-                1.02
-            );
+                    1.02);
         });
 
         node.setOnMouseExited(e -> {
 
             node.setStyle(
-                normalStyle
-            );
+                    normalStyle);
 
             node.setScaleX(
-                1.0
-            );
+                    1.0);
 
             node.setScaleY(
-                1.0
-            );
+                    1.0);
         });
     }
 
@@ -2543,24 +2138,22 @@ public class AthleteDashboardUI {
         VBox item = new VBox(5);
         item.setPadding(new Insets(10));
         item.setStyle(
-            "-fx-background-color: #1a2634;" +
-            "-fx-background-radius: 8px;"
-        );
-        
+                "-fx-background-color: #1a2634;" +
+                        "-fx-background-radius: 8px;");
+
         Text titleText = new Text(title);
         titleText.setStyle("-fx-fill: #62ff96; -fx-font-weight: bold; -fx-font-size: 13px;");
-        
+
         Text descText = new Text(desc);
         descText.setStyle("-fx-fill: #8a8d91; -fx-font-size: 11px;");
         descText.setWrappingWidth(210);
-        
+
         item.getChildren().addAll(titleText, descText);
-        
-        addHoverEffect(item, 
-            "-fx-background-color: #1a2634; -fx-background-radius: 8px;",
-            "-fx-background-color: #233446; -fx-background-radius: 8px;"
-        );
-        
+
+        addHoverEffect(item,
+                "-fx-background-color: #1a2634; -fx-background-radius: 8px;",
+                "-fx-background-color: #233446; -fx-background-radius: 8px;");
+
         return item;
     }
 
@@ -2569,33 +2162,33 @@ public class AthleteDashboardUI {
 
     // @Override
     // public void start(Stage stage)
-    //         throws Exception {
+    // throws Exception {
 
-    //     primaryStage =
-    //             stage;
+    // primaryStage =
+    // stage;
 
-    //     Runnable dummyCallback =
-    //             () -> {
+    // Runnable dummyCallback =
+    // () -> {
 
-    //                 System.out.println(
-    //                     "Navigating..."
-    //                 );
-    //             };
+    // System.out.println(
+    // "Navigating..."
+    // );
+    // };
 
-    //     stage.setScene(
-    //         getAthleteDashboardScene(
-    //             dummyCallback
-    //         )
-    //     );
+    // stage.setScene(
+    // getAthleteDashboardScene(
+    // dummyCallback
+    // )
+    // );
 
-    //     stage.setTitle(
-    //         "FitVerse - AI Athlete Dashboard"
-    //     );
+    // stage.setTitle(
+    // "FitVerse - AI Athlete Dashboard"
+    // );
 
-    //     stage.setMaximized(
-    //         true
-    //     );
+    // stage.setMaximized(
+    // true
+    // );
 
-    //     stage.show();
+    // stage.show();
     // }
 }

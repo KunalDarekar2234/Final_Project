@@ -16,8 +16,9 @@ import javafx.stage.Stage;
 
 public class LoginPage  {
 
-    public static Stage primaryStage;
+    // public static Stage primaryStage;
 
+    // public static Stage primaryStage;
     private Scene loginScene;   
     // =========================================================
     // COLORS
@@ -140,25 +141,33 @@ public class LoginPage  {
                     System.out.println("Login Successful! You can now transition to the Dashboard.");
                     if ("User".equals(selectedRole)) {
                         com.visionx.view.user_login.AthleteDashboardUI dashboard = new com.visionx.view.user_login.AthleteDashboardUI();
-                        com.visionx.view.user_login.AthleteDashboardUI.primaryStage = primaryStage;
                         Runnable callRunnable = new Runnable() {
                             @Override
                             public void run() {
-                                primaryStage.setScene(loginScene);
+                                SplashScreen.primaryStage.setScene(loginScene);
                             }
                         };
-                        primaryStage.setScene(dashboard.getAthleteDashboardScene(callRunnable));
+                        SplashScreen.primaryStage.setScene(dashboard.getAthleteDashboardScene(callRunnable));
                     }
                     else if("Supplement Store".equals(selectedRole)){
                         com.visionx.view.suppliment_login.Dashboard dashboard = new com.visionx.view.suppliment_login.Dashboard();
-                        com.visionx.view.suppliment_login.Dashboard.primaryStage = primaryStage;
                         Runnable callRunnable = new Runnable() {
                             @Override
                             public void run() {
-                                primaryStage.setScene(loginScene);
+                                SplashScreen.primaryStage.setScene(loginScene);
                             }
                         };
-                        primaryStage.setScene(dashboard.getSupplimentDashboardScene(callRunnable));
+                        SplashScreen.primaryStage.setScene(dashboard.getSupplimentDashboardScene(callRunnable));
+                    }
+                    else if("Gym Owner".equals(selectedRole)){
+                        com.visionx.view.gym_owner.Dashboard dashboard = new com.visionx.view.gym_owner.Dashboard();
+                        Runnable callRunnable = new Runnable() {
+                            @Override
+                            public void run() {
+                                SplashScreen.primaryStage.setScene(loginScene);
+                            }
+                        };
+                        SplashScreen.primaryStage.setScene(dashboard.getDashboardScene(callRunnable));
                     }
                 } else {
                     System.out.println("Login failed. Check console logs.");
@@ -192,10 +201,10 @@ public class LoginPage  {
             Runnable callRunnable = new Runnable() {
                 @Override
                 public void run() {
-                    primaryStage.setScene(loginScene);
+                    SplashScreen.primaryStage.setScene(loginScene);
                 }
             };
-            primaryStage.setScene(sign_Up.getSignUpScene(callRunnable));
+            SplashScreen.primaryStage.setScene(sign_Up.getSignUpScene(callRunnable));
         });
 
         footerBox.getChildren().addAll(noAccount, signUpLabel);
@@ -219,8 +228,8 @@ public class LoginPage  {
         // =====================================================
         // SCENE SETUP
         // =====================================================
-        loginScene = new Scene(root, primaryStage.getWidth(), primaryStage.getHeight());
-        primaryStage.setMaximized(true);
+        loginScene = new Scene(root, SplashScreen.primaryStage.getWidth(), SplashScreen.primaryStage.getHeight());
+        SplashScreen.primaryStage.setMaximized(true);
         return loginScene;
     }
 
