@@ -242,14 +242,61 @@ public class AthleteDashboardUI {
                 avatar,
                 userInfo);
 
+        Button logoutBtn = new Button("Logout");
+        logoutBtn.setStyle(
+                "-fx-background-color: transparent;" +
+                "-fx-text-fill: #ff4d4d;" +
+                "-fx-font-size: 14px;" +
+                "-fx-font-weight: bold;" +
+                "-fx-alignment: center-left;" +
+                "-fx-padding: 10px 15px;" +
+                "-fx-cursor: hand;");
+        
+        logoutBtn.setMaxWidth(Double.MAX_VALUE);
+        
+        logoutBtn.setOnMouseEntered(e -> logoutBtn.setStyle(
+                "-fx-background-color: rgba(255, 77, 77, 0.1);" +
+                "-fx-text-fill: #ff4d4d;" +
+                "-fx-font-size: 14px;" +
+                "-fx-font-weight: bold;" +
+                "-fx-alignment: center-left;" +
+                "-fx-padding: 10px 15px;" +
+                "-fx-background-radius: 8px;" +
+                "-fx-cursor: hand;"));
+                
+        logoutBtn.setOnMouseExited(e -> logoutBtn.setStyle(
+                "-fx-background-color: transparent;" +
+                "-fx-text-fill: #ff4d4d;" +
+                "-fx-font-size: 14px;" +
+                "-fx-font-weight: bold;" +
+                "-fx-alignment: center-left;" +
+                "-fx-padding: 10px 15px;" +
+                "-fx-cursor: hand;"));
+
+        logoutBtn.setOnAction(e -> {
+            if (callBackAction != null) {
+                callBackAction.run();
+            }
+        });
+
+        VBox.setMargin(logoutBtn, new Insets(10, 0, 30, 0));
+
         sidebar.getChildren().addAll(
                 logoBox,
                 navBox,
                 spacer,
                 premiumCard,
-                userProfile);
+                userProfile,
+                logoutBtn);
 
-        borderPane.setLeft(sidebar);
+        ScrollPane sidebarScroll = new ScrollPane(sidebar);
+        sidebarScroll.setFitToWidth(true);
+        sidebar.minHeightProperty().bind(sidebarScroll.heightProperty());
+        sidebarScroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        sidebarScroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        sidebarScroll.setStyle("-fx-background: transparent; -fx-background-color: transparent; -fx-control-inner-background: transparent; -fx-padding: 0; -fx-border-color: transparent;");
+
+        borderPane.setLeft(sidebarScroll);
 
         // =====================================================
         // MAIN CONTENT

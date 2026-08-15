@@ -23,11 +23,14 @@ public class Dashboard  {
 
     public static BorderPane mainPane;
 
+    public static Runnable logoutCallback;
+
     private static Node dashboardCentre;
 
 //     public static Stage primaryStage;
 
     public Scene getSupplimentDashboardScene(Runnable callBackAction) {
+        Dashboard.logoutCallback = callBackAction;
 
 
 
@@ -751,6 +754,41 @@ public class Dashboard  {
          * =========================================
          */
 
+        Button logoutBtn = new Button("🚪 LOGOUT");
+        logoutBtn.setMaxWidth(Double.MAX_VALUE);
+        logoutBtn.setStyle(
+                "-fx-background-color: transparent;" +
+                "-fx-text-fill: #ff4d4d;" +
+                "-fx-font-weight: bold;" +
+                "-fx-alignment: center-left;" +
+                "-fx-padding: 10px 15px;" +
+                "-fx-cursor: hand;");
+        
+        logoutBtn.setOnMouseEntered(e -> logoutBtn.setStyle(
+                "-fx-background-color: rgba(255, 77, 77, 0.1);" +
+                "-fx-text-fill: #ff4d4d;" +
+                "-fx-font-weight: bold;" +
+                "-fx-alignment: center-left;" +
+                "-fx-padding: 10px 15px;" +
+                "-fx-background-radius: 8px;" +
+                "-fx-cursor: hand;"));
+                
+        logoutBtn.setOnMouseExited(e -> logoutBtn.setStyle(
+                "-fx-background-color: transparent;" +
+                "-fx-text-fill: #ff4d4d;" +
+                "-fx-font-weight: bold;" +
+                "-fx-alignment: center-left;" +
+                "-fx-padding: 10px 15px;" +
+                "-fx-cursor: hand;"));
+
+        logoutBtn.setOnAction(e -> {
+            if (Dashboard.logoutCallback != null) {
+                Dashboard.logoutCallback.run();
+            }
+        });
+
+        VBox.setMargin(logoutBtn, new Insets(0, 0, 30, 0));
+
         sideBar.getChildren().addAll(
 
                 logoBox,
@@ -777,8 +815,9 @@ public class Dashboard  {
                 notificationsButton,
                 settingsButton,
 
-                spacer
+                spacer,
 
+                logoutBtn
         );
 
 

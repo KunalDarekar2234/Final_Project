@@ -113,11 +113,14 @@ public class Dashboard {
     private final Map<String, Node> pageCache =
             new HashMap<>();
 
+    private Runnable logoutCallback;
+
     // =========================================================
     // START
     // =========================================================
 
     public Scene getDashboardScene(Runnable callback) {
+        this.logoutCallback = callback;
 
         // DashboardStage = primaryStage;
         // Image img = new Image(
@@ -555,6 +558,14 @@ public class Dashboard {
                 logoutDef,
                 logoutHov
         );
+
+        logoutBtn.setOnAction(e -> {
+            if (logoutCallback != null) {
+                logoutCallback.run();
+            }
+        });
+
+        javafx.scene.layout.VBox.setMargin(logoutBtn, new javafx.geometry.Insets(0, 0, 30, 0));
 
         bottom.getChildren().addAll(
                 userBox,

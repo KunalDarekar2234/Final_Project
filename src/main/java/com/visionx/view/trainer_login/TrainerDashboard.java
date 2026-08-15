@@ -72,11 +72,14 @@ public class TrainerDashboard {
     private final Map<String, Node> pageCache =
             new HashMap<>();
 
+    private Runnable logoutCallback;
+
     // =========================================================
     // START
     // =========================================================
 
     public Scene getTrainerDashboardScene(Runnable callRunnable) {
+        this.logoutCallback = callRunnable;
 
 
 
@@ -649,6 +652,8 @@ public class TrainerDashboard {
         logout.setOnAction(
                 e -> logout()
         );
+
+        javafx.scene.layout.VBox.setMargin(logout, new javafx.geometry.Insets(0, 0, 30, 0));
 
         bottom.getChildren().addAll(
                 userBox,
@@ -2687,6 +2692,9 @@ public class TrainerDashboard {
         System.out.println(
                 "Trainer Logout"
         );
+        if (logoutCallback != null) {
+            logoutCallback.run();
+        }
     }
 
     // =========================================================
