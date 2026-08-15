@@ -169,6 +169,16 @@ public class LoginPage  {
                         };
                         SplashScreen.primaryStage.setScene(dashboard.getDashboardScene(callRunnable));
                     }
+                    else if("Trainer".equals(selectedRole)){
+                        com.visionx.view.trainer_login.TrainerDashboard dashboard = new com.visionx.view.trainer_login.TrainerDashboard();
+                        Runnable callRunnable = new Runnable() {
+                            @Override
+                            public void run() {
+                                SplashScreen.primaryStage.setScene(loginScene);
+                            }
+                        };
+                        SplashScreen.primaryStage.setScene(dashboard.getTrainerDashboardScene(callRunnable));
+                    }
                 } else {
                     System.out.println("Login failed. Check console logs.");
                 }
